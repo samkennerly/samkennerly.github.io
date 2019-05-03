@@ -243,7 +243,7 @@ PLATFORMS
 
 DEPENDENCIES
   github-pages
-  jekyll (~> 3.8.5)
+  jekyll
 
 RUBY VERSION
    ruby 2.6.3p62

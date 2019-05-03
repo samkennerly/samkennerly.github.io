@@ -1,4 +1,32 @@
-title: Games Without Frontiers
-logo:
-description: UNDER CONSTRUCTION
-theme: jekyll-theme-dinky
+# Meta
+title: distilled technology
+timezone: America/New_York
+description: tools for data plumbers
+
+# GitHub Pages settings which cannot be overridden
+# https://help.github.com/en/articles/configuring-jekyll
+gist:
+  noscript: false
+highlighter: rouge
+incremental: false
+kramdown:
+  math_engine: mathjax
+  syntax_highlighter: rouge
+lsi: false
+safe: true
+source: .
+
+# Jekyll build settings
+theme:
+  jekyll-theme-dinky
+plugins:
+  - jekyll-sitemap
+exclude:
+  - .bundle
+  - .git
+  - .gitignore
+  - .ruby-version
+  - Gemfile
+  - Gemfile.lock
+  - LICENSE
+  - vendor/bundle

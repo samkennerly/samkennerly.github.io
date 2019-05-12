@@ -4,14 +4,3 @@
 .Trashes
 .fseventsd
 Thumbs.db
-
-# Jekyll
-_site/
-.sass-cache/
-.jekyll-cache/
-.jekyll-metadata
-
-# Ruby
-*.gem
-/.bundle/
-/vendor/bundle

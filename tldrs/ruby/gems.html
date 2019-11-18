@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Sam Kennerly</title>
+<link rel="canonical" href="https://samkennerly.github.io/tldrs/ruby/gems.html">
+<link rel="icon" href="../../favicon.png">
+<link rel="stylesheet" href="../../style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Sam Kennerly">
+<meta name="description" content="Free tools for data plumbers.">
+<meta name="generator" content="https://github.com/samkennerly/quarto/">
+<meta name="keywords" content="data, docker, jupyter, kdb, python, ruby, science, terraform">
+</head>
+<body>
+<nav>
+<a href="../../index.html" rel="home">index</a>
+<a href="../../projects.html">projects</a>
+<a href="../../quartos.html">quartos</a>
+<details><summary>random</summary>
+<a href="../../random/examples.html">examples</a>
+</details>
+<details><summary>science</summary>
+<a href="../../science/publications.html">publications</a>
+<a href="../../science/quick_reference.html">quick reference</a>
+<a href="../../science/reading_list.html">reading list</a>
+<a href="../../science/talks.html">talks</a>
+</details>
+<details open><summary>tldrs</summary>
+<details open><summary>ruby</summary>
+<a href="bundler.html">bundler</a>
+<a href="#">gems</a>
+<a href="rbenv.html">rbenv</a>
+</details>
+</details>
+</nav>
+<main>
+<h1>RubyGems quickstart</h1>
+<h2>abstract</h2>
+<ul>
+  <li>
+    <a href="https://guides.rubygems.org/what-is-a-gem/">Gems</a> are self-contained Ruby packages.
+  </li>
+  <li>
+    <a href="https://guides.rubygems.org/command-reference/">RubyGems</a> is a <a href="https://en.wikipedia.org/wiki/Package_manager">package manager</a> for Ruby.
+  </li>
+  <li>
+    <code>gem</code> is the <a href="https://en.wikipedia.org/wiki/Command-line_interface">shell</a> command which runs RubyGems.
+  </li>
+</ul>See the <a href="https://guides.rubygems.org/">RubyGems guides</a> for details.
+<h2>commands</h2>These commmands use <a href="https://github.com/ruby/rake">rake</a> as an example gem.
+<table>
+  <tr>
+    <td>install RubyGems</td>
+    <td>Ruby &gt;= 1.9 includes RubyGems.</td>
+  </tr>
+  <tr>
+    <td>show RubyGems environment</td>
+    <td><code>gem env</code></td>
+  </tr>
+  <tr>
+    <td>update RubyGems</td>
+    <td><code>sudo gem update --system</code></td>
+  </tr>
+  <tr>
+    <td>find gems by name</td>
+    <td><code>gem search rake</code></td>
+  </tr>
+  <tr>
+    <td>
+      find gems by <a href="https://en.wikipedia.org/wiki/Regular_expression">regex</a>
+    </td>
+    <td><code>gem search ^rake$</code></td>
+  </tr>
+  <tr>
+    <td>install a gem</td>
+    <td><code>sudo gem install rake</code></td>
+  </tr>
+  <tr>
+    <td>install a gem version</td>
+    <td><code>sudo gem install rake:12.3.2</code></td>
+  </tr>
+  <tr>
+    <td>uninstall a gem</td>
+    <td><code>sudo gem uninstall rake</code></td>
+  </tr>
+  <tr>
+    <td>show installed gems</td>
+    <td><code>gem list --local</code></td>
+  </tr>
+  <tr>
+    <td>show a gem install path</td>
+    <td><code>gem which rake</code></td>
+  </tr>
+</table>See the <a href="https://guides.rubygems.org/rubygems-basics/">RubyGems basics</a> for details.
+<h2>dependencies</h2>Some commands may require <a href="https://en.wikipedia.org/wiki/Sudo">superuser</a> permissions.
+<h2>examples</h2>
+<h3>install a specific gem version</h3>
+<pre>
+gem install nokogiri:1.5.6
+</pre>RubyGems will automatically:
+<ul>
+  <li>check if any gems named <code>nokogiri</code> are already installed</li>
+  <li>download <code>nokogiri-1.5.6.gem</code> from <a href="https://rubygems.org/">rubygems.org</a>
+  </li>
+  <li>uncompress the file and build any <a href="https://guides.rubygems.org/gems-with-extensions/">gem extensions</a>
+  </li>
+  <li>install any other gems required by <code>nokogiri:1.5.6</code></li>
+  <li>build documentation for installed gems</li>
+</ul>See the <a href="https://guides.rubygems.org/command-reference/#gem-install">gem install docs</a> for details.
+</main>
+<section id="icons">
+<a href="mailto:samkennerly@gmail.com"><img alt="Email" src="../../media/icons/email.svg" height="32" title="Email"></a>
+<a href="https://github.com/samkennerly/"><img alt="GitHub" src="../../media/icons/github.svg" height="32" title="GitHub"></a>
+<a href="https://www.linkedin.com/in/samkennerlyphd/"><img alt="LinkedIn" src="../../media/icons/linkedin.svg" height="32" title="LinkedIn"></a>
+<a href="https://quarto.neocities.org/"><img alt="Quarto" src="../../media/icons/quarto.svg" height="32" title="Quarto"></a>
+<a href="https://twitter.com/data_lore/"><img alt="Twitter" src="../../media/icons/twitter.svg" height="32" title="Twitter"></a>
+</section>
+<section id="jump">
+<a href="bundler.html" rel="prev">--</a>
+<a href="#" id="updog">return</a>
+<a href="rbenv.html" rel="next">++</a>
+</section>
+<section id="klf">
+<span id="copyright">© Sam Kennerly 2019.</span>
+<a href="https://creativecommons.org/licenses/by/4.0" rel="license">Licensed under a CC BY 4.0 license.</a>
+<a href="https://github.com/samkennerly/quarto">Built by a Quarto.</a>
+<address>samkennerly@gmail.com</address>
+</section>
+</body>
+</html>

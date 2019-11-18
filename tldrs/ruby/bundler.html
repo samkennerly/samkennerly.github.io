@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Sam Kennerly</title>
+<link rel="canonical" href="https://samkennerly.github.io/tldrs/ruby/bundler.html">
+<link rel="icon" href="../../favicon.png">
+<link rel="stylesheet" href="../../style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Sam Kennerly">
+<meta name="description" content="Free tools for data plumbers.">
+<meta name="generator" content="https://github.com/samkennerly/quarto/">
+<meta name="keywords" content="data, docker, jupyter, kdb, python, ruby, science, terraform">
+</head>
+<body>
+<nav>
+<a href="../../index.html" rel="home">index</a>
+<a href="../../projects.html">projects</a>
+<a href="../../quartos.html">quartos</a>
+<details><summary>random</summary>
+<a href="../../random/examples.html">examples</a>
+</details>
+<details><summary>science</summary>
+<a href="../../science/publications.html">publications</a>
+<a href="../../science/quick_reference.html">quick reference</a>
+<a href="../../science/reading_list.html">reading list</a>
+<a href="../../science/talks.html">talks</a>
+</details>
+<details open><summary>tldrs</summary>
+<details open><summary>ruby</summary>
+<a href="#">bundler</a>
+<a href="gems.html">gems</a>
+<a href="rbenv.html">rbenv</a>
+</details>
+</details>
+</nav>
+<main>
+<h1>Bundler quickstart</h1>
+<h2>abstract</h2>
+<ul>
+  <li>
+    <a href="https://bundler.io/docs.html">Bundler</a> is a <a href="https://www.ruby-lang.org/en/">Ruby</a> <a href="https://guides.rubygems.org/what-is-a-gem/">gem</a> which installs other Ruby gems.
+  </li>
+  <li>Bundler can install a "bundle" of gems for each project on a machine.</li>
+  <li>Installing each project's gems separately helps developers avoid <a href="https://en.wikipedia.org/wiki/Dependency_hell">dependency hell</a>.
+  </li>
+</ul>
+<h2>basics</h2>
+<ol>
+  <li>Open a <a href="https://en.wikipedia.org/wiki/Command-line_interface">terminal</a> and <code>cd</code> to the top-level folder for a project.
+  </li>
+  <li>Create a <a href="https://bundler.io/gemfile.html">Gemfile</a> listing the project's required gems and <a href="https://guides.rubygems.org/patterns/">version constraints</a>.
+  </li>
+  <li>Run <code>bundle</code> to install all required gems.</li>
+  <li>Bundler creates a <a href="https://bundler.io/man/bundle-install.1.html#THE-GEMFILE-LOCK">Gemfile.lock</a> file with <a href="https://en.wikipedia.org/wiki/Package_manager#Upgrade_suppression">pinned versions</a> of all gems installed for the project.
+  </li>
+  <li>Bundler automatically updates Gemfile.lock on subsequent runs.</li>
+</ol>
+<h2>commands</h2>The <a href="https://ruby.github.io/rake/">rake</a> gem is used here as an example.
+<table>
+  <tr>
+    <td>install Bundler</td>
+    <td><code>gem install bundler</code></td>
+  </tr>
+  <tr>
+    <td>uninstall Bundler</td>
+    <td><code>gem uninstall bundler</code></td>
+  </tr>
+  <tr>
+    <td>update Bundler</td>
+    <td><code>gem update bundler</code></td>
+  </tr>
+  <tr>
+    <td>create a minimal <code>Gemfile</code></td>
+    <td><code>bundle init</code></td>
+  </tr>
+  <tr>
+    <td>install all gems in <code>Gemfile</code></td>
+    <td><code>bundle install</code></td>
+  </tr>
+  <tr>
+    <td>remove unused gems</td>
+    <td><code>bundle clean</code></td>
+  </tr>
+  <tr>
+    <td>update <code>rake</code></td>
+    <td><code>bundle update rake</code></td>
+  </tr>
+  <tr>
+    <td>show path to <code>rake</code></td>
+    <td><code>bundle show rake</code></td>
+  </tr>
+  <tr>
+    <td>start interactive Ruby</td>
+    <td><code>bundle exec irb</code></td>
+  </tr>
+  <tr>
+    <td>show installed gems</td>
+    <td><code>bundle exec gem list</code></td>
+  </tr>
+  <tr>
+    <td>run a Ruby script</td>
+    <td><code>bundle exec ruby path/to/script.rb</code></td>
+  </tr>
+  <tr>
+    <td>
+      track gems with <a href="https://git-scm.com/">git</a>
+    </td>
+    <td><code>git add Gemfile Gemfile.lock</code></td>
+  </tr>
+</table>See the <a href="https://bundler.io/bundler_workflow.html">Bundler workflow</a> for details.
+<h2>dependencies</h2>
+<ul>
+  <li>
+    <a href="https://www.ruby-lang.org/en/documentation/installation/">Ruby</a> &gt;= 2.3.0
+  </li>
+  <li>
+    <a href="https://rubygems.org/">RubyGems</a> &gt;= 2.5.0
+  </li>
+</ul>See the <a href="https://bundler.io/v2.0/guides/">Bundler prerequisites</a> for details.
+<h2>examples</h2>
+<h3>Gemfile</h3>
+<pre>
+ruby '~&gt; 2.3'
+source 'https://rubygems.org' do
+    gem 'nokogiri'
+    gem 'rails', '3.0.0.beta3'
+    gem 'rack',  '&gt;=1.0'
+    gem 'thin',  '~&gt;1.1'
+end
+</pre>
+<h3>.gitignore</h3>
+<pre>
+.bundle/           # Bundler config files
+vendor/bundle      # Locally-installed gem files
+</pre>See the <a href="https://bundler.io/man/bundle-install.1.html#THE-GEMFILE-LOCK">bundle install docs</a> for details.
+</main>
+<section id="icons">
+<a href="mailto:samkennerly@gmail.com"><img alt="Email" src="../../media/icons/email.svg" height="32" title="Email"></a>
+<a href="https://github.com/samkennerly/"><img alt="GitHub" src="../../media/icons/github.svg" height="32" title="GitHub"></a>
+<a href="https://www.linkedin.com/in/samkennerlyphd/"><img alt="LinkedIn" src="../../media/icons/linkedin.svg" height="32" title="LinkedIn"></a>
+<a href="https://quarto.neocities.org/"><img alt="Quarto" src="../../media/icons/quarto.svg" height="32" title="Quarto"></a>
+<a href="https://twitter.com/data_lore/"><img alt="Twitter" src="../../media/icons/twitter.svg" height="32" title="Twitter"></a>
+</section>
+<section id="jump">
+<a href="../../science/talks.html" rel="prev">--</a>
+<a href="#" id="updog">return</a>
+<a href="gems.html" rel="next">++</a>
+</section>
+<section id="klf">
+<span id="copyright">© Sam Kennerly 2019.</span>
+<a href="https://creativecommons.org/licenses/by/4.0" rel="license">Licensed under a CC BY 4.0 license.</a>
+<a href="https://github.com/samkennerly/quarto">Built by a Quarto.</a>
+<address>samkennerly@gmail.com</address>
+</section>
+</body>
+</html>

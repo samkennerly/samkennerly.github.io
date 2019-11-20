@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Sam Kennerly</title>
+<link rel="canonical" href="https://samkennerly.github.io/tldrs/python/pdb.html">
+<link rel="icon" href="../../favicon.png">
+<link rel="stylesheet" href="../../style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Sam Kennerly">
+<meta name="description" content="Free tools for data plumbers.">
+<meta name="generator" content="https://github.com/samkennerly/quarto/">
+<meta name="keywords" content="data, docker, jupyter, kdb, python, ruby, science, terraform">
+</head>
+<body>
+<nav>
+<a href="../../index.html" rel="home">index</a>
+<a href="../../projects.html">projects</a>
+<a href="../../quartos.html">quartos</a>
+<details><summary>random</summary>
+<a href="../../random/examples.html">examples</a>
+</details>
+<details><summary>science</summary>
+<a href="../../science/presentations.html">presentations</a>
+<a href="../../science/publications.html">publications</a>
+<a href="../../science/tutorials.html">tutorials</a>
+</details>
+<details open><summary>tldrs</summary>
+<details open><summary>python</summary>
+<a href="#">pdb</a>
+</details>
+<details><summary>ruby</summary>
+<a href="../ruby/bundler.html">bundler</a>
+<a href="../ruby/gems.html">gems</a>
+<a href="../ruby/rbenv.html">rbenv</a>
+</details>
+</details>
+</nav>
+<main>
+<h1>UNDER CONSTRUCTION</h1>
+<h2>abstract</h2>
+<ul>
+  <li>Python includes a <a href="https://en.wikipedia.org/wiki/Debugger">debugger</a> named <a href="https://docs.python.org/3/library/pdb.html">pdb</a>.
+  </li>
+  <li>The pdb <a href="https://docs.python.org/3/tutorial/modules.html">module</a> can be <a href="https://docs.python.org/3/tutorial/modules.html#executing-modules-as-scripts">run like a script</a> with <code>python -m pdb</code>.
+  </li>
+  <li>Python 2 and 3 include pdb as a <a href="https://docs.python.org/3/library/">built-in</a> module.
+  </li>
+</ul>
+<h2>basics</h2>
+<ol>
+  <li>Open a <a href="https://en.wikipedia.org/wiki/Command-line_interface">terminal</a>.
+  </li>
+</ol>
+<h2>commands</h2>
+<table>
+  <caption>
+    controls
+  </caption>
+  <tr>
+    <td>execute <code>statement</code></td>
+    <td><code>!statement</code></td>
+  </tr>
+  <tr>
+    <td>help menu</td>
+    <td><code>h</code></td>
+  </tr>
+  <tr>
+    <td>start interpreter</td>
+    <td><code>interact</code></td>
+  </tr>
+  <tr>
+    <td>run script again</td>
+    <td><code>run</code></td>
+  </tr>
+  <tr>
+    <td>quit debugger</td>
+    <td><code>q</code></td>
+  </tr>
+</table>
+<table>
+  <caption>
+    breakpoints
+  </caption>
+  <tr>
+    <td>show breakpoints</td>
+    <td><code>b</code></td>
+  </tr>
+  <tr>
+    <td>set breakpoint at line 13</td>
+    <td><code>b 13</code></td>
+  </tr>
+  <tr>
+    <td>set breakpoint inside <code>func()</code></td>
+    <td><code>b func</code></td>
+  </tr>
+  <tr>
+    <td>clear all breakpoints</td>
+    <td><code>cl</code></td>
+  </tr>
+  <tr>
+    <td>clear 3rd breakpoint</td>
+    <td><code>cl 3</code></td>
+  </tr>
+  <tr>
+    <td>down 5 levels in stack trace</td>
+    <td><code>d 5</code></td>
+  </tr>
+  <tr>
+    <td>up 5 levels in stack trace</td>
+    <td><code>u 5</code></td>
+  </tr>
+</table>
+<table>
+  <caption>
+    run code
+  </caption>
+  <tr>
+    <td>continue until breakpoint</td>
+    <td><code>c</code></td>
+  </tr>
+  <tr>
+    <td>run until line 13</td>
+    <td><code>unt 13</code></td>
+  </tr>
+  <tr>
+    <td>run until next line</td>
+    <td><code>n</code></td>
+  </tr>
+  <tr>
+    <td>run until function returns</td>
+    <td><code>r</code></td>
+  </tr>
+  <tr>
+    <td>step inside function</td>
+    <td><code>s</code></td>
+  </tr>
+</table>
+<table>
+  <caption>
+    show context
+  </caption>
+  <tr>
+    <td>arguments for current function</td>
+    <td><code>args</code></td>
+  </tr>
+  <tr>
+    <td>list lines near current line</td>
+    <td><code>l</code></td>
+  </tr>
+  <tr>
+    <td>list lines near line 13</td>
+    <td><code>l 13</code></td>
+  </tr>
+  <tr>
+    <td>list lines from 13 through 20</td>
+    <td><code>l 13 20</code></td>
+  </tr>
+  <tr>
+    <td>list lines in current frame</td>
+    <td><code>ll</code></td>
+  </tr>
+  <tr>
+    <td>print value of <code>x</code></td>
+    <td><code>p x</code></td>
+  </tr>
+  <tr>
+    <td>pretty-print value of <code>x</code></td>
+    <td><code>pp x</code></td>
+  </tr>
+  <tr>
+    <td>source code of <code>x</code></td>
+    <td><code>source x</code></td>
+  </tr>
+  <tr>
+    <td>where are we in stack trace?</td>
+    <td><code>w</code></td>
+  </tr>
+</table>
+<h2>dependencies</h2>
+<h2>examples</h2>
+<h2>see also</h2>
+<ul>
+  <li>tutorial by <a href="https://djangostars.com/blog/debugging-python-applications-with-pdb/">Djangostars</a>
+  </li>
+  <li>tutorial by <a href="https://www.digitalocean.com/community/tutorials/how-to-use-the-python-debugger">DigitalOcean</a>
+  </li>
+</ul>
+</main>
+<section id="icons">
+<a href="mailto:samkennerly@gmail.com"><img alt="Email" src="../../media/icons/email.svg" height="32" title="Email"></a>
+<a href="https://github.com/samkennerly/"><img alt="GitHub" src="../../media/icons/github.svg" height="32" title="GitHub"></a>
+<a href="https://www.linkedin.com/in/samkennerlyphd/"><img alt="LinkedIn" src="../../media/icons/linkedin.svg" height="32" title="LinkedIn"></a>
+<a href="https://quarto.neocities.org/"><img alt="Quarto" src="../../media/icons/quarto.svg" height="32" title="Quarto"></a>
+<a href="https://twitter.com/data_lore/"><img alt="Twitter" src="../../media/icons/twitter.svg" height="32" title="Twitter"></a>
+</section>
+<section id="jump">
+<a href="../../science/tutorials.html" rel="prev">--</a>
+<a href="#" id="updog">return</a>
+<a href="../ruby/bundler.html" rel="next">++</a>
+</section>
+<section id="klf">
+<span id="copyright">© Sam Kennerly 2019.</span>
+<a href="https://creativecommons.org/licenses/by/4.0" rel="license">Licensed under a CC BY 4.0 license.</a>
+<a href="https://quarto.neocities.org/">Built by a Quarto.</a>
+<address>samkennerly@gmail.com</address>
+</section>
+</body>
+</html>

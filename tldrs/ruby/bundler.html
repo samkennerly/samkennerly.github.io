@@ -37,28 +37,23 @@
 </details>
 </nav>
 <main>
-<h1>Bundler quickstart</h1>
-<h2>abstract</h2>
-<ul>
-  <li>
-    <a href="https://bundler.io/docs.html">Bundler</a> is a <a href="https://www.ruby-lang.org/en/">Ruby</a> <a href="https://guides.rubygems.org/what-is-a-gem/">gem</a> which installs other Ruby gems.
-  </li>
-  <li>Bundler can install a "bundle" of gems for each project on a machine.</li>
-  <li>Installing each project's gems separately helps developers avoid <a href="https://en.wikipedia.org/wiki/Dependency_hell">dependency hell</a>.
-  </li>
-</ul>
-<h2>basics</h2>
+<h1>bundler</h1><!-- -->
+<h2 id="abstract">abstract</h2><!-- -->
+<p><a href="https://bundler.io/docs.html">Bundler</a> is a <a href="https://www.ruby-lang.org/en/">Ruby</a> <a href="https://guides.rubygems.org/what-is-a-gem/">gem</a> which installs Ruby gems.</p>
+<p>Bundler is often used to install a unique <q>bundle</q> of gems for each software project on a machine. Keeping projects' gems separated helps developers avoid <a href="https://en.wikipedia.org/wiki/Dependency_hell">dependency hell</a>.</p>
+<h2 id="basics">basics</h2><!-- -->
 <ol>
-  <li>Open a <a href="https://en.wikipedia.org/wiki/Command-line_interface">terminal</a> and <code>cd</code> to the top-level folder for a project.
+  <li>Open a <a href="https://en.wikipedia.org/wiki/Command-line_interface">terminal</a> and <code>cd</code> to a project's top-level folder.
   </li>
   <li>Create a <a href="https://bundler.io/gemfile.html">Gemfile</a> listing the project's required gems and <a href="https://guides.rubygems.org/patterns/">version constraints</a>.
   </li>
-  <li>Run <code>bundle</code> to install all required gems.</li>
-  <li>Bundler creates a <a href="https://bundler.io/man/bundle-install.1.html#THE-GEMFILE-LOCK">Gemfile.lock</a> file with <a href="https://en.wikipedia.org/wiki/Package_manager#Upgrade_suppression">pinned versions</a> of all gems installed for the project.
+  <li>Run <code>bundle</code> to install all gems in the <code>Gemfile</code> and their dependencies.</li>
+  <li>Bundler creates a <a href="https://bundler.io/man/bundle-install.1.html#THE-GEMFILE-LOCK">Gemfile.lock</a> file listing <a href="https://en.wikipedia.org/wiki/Package_manager#Upgrade_suppression">pinned versions</a> of all installed gems.
   </li>
   <li>Bundler automatically updates Gemfile.lock on subsequent runs.</li>
 </ol>
-<h2>commands</h2>The <a href="https://ruby.github.io/rake/">rake</a> gem is used here as an example.
+<h2 id="commands">commands</h2><!-- -->
+The <a href="https://ruby.github.io/rake/">rake</a> gem is used here as an example.
 <table>
   <tr>
     <td>install Bundler</td>
@@ -110,8 +105,8 @@
     </td>
     <td><code>git add Gemfile Gemfile.lock</code></td>
   </tr>
-</table>See the <a href="https://bundler.io/bundler_workflow.html">Bundler workflow</a> for details.
-<h2>dependencies</h2>
+</table>
+<h2 id="dependencies">dependencies</h2><!-- -->
 <ul>
   <li>
     <a href="https://www.ruby-lang.org/en/documentation/installation/">Ruby</a> &gt;= 2.3.0
@@ -119,9 +114,9 @@
   <li>
     <a href="https://rubygems.org/">RubyGems</a> &gt;= 2.5.0
   </li>
-</ul>See the <a href="https://bundler.io/v2.0/guides/">Bundler prerequisites</a> for details.
-<h2>examples</h2>
-<h3>Gemfile</h3>
+</ul>
+<h2 id="examples">examples</h2><!-- -->
+Example <code>Gemfile</code> file:
 <pre>
 ruby '~&gt; 2.3'
 source 'https://rubygems.org' do
@@ -130,12 +125,24 @@ source 'https://rubygems.org' do
     gem 'rack',  '&gt;=1.0'
     gem 'thin',  '~&gt;1.1'
 end
-</pre>
-<h3>.gitignore</h3>
+</pre>Example <code>.gitignore</code> file:
 <pre>
 .bundle/           # Bundler config files
 vendor/bundle      # Locally-installed gem files
-</pre>See the <a href="https://bundler.io/man/bundle-install.1.html#THE-GEMFILE-LOCK">bundle install docs</a> for details.
+</pre>
+<h2 id="faq">faq</h2><!-- -->
+<dl>
+  <dt>Where are the official docs?</dt>
+  <dd>
+    Bundler <a href="https://bundler.io/docs.html">docs</a>
+  </dd>
+  <dd>
+    Bundler <a href="https://bundler.io/bundler_workflow.html">workflow</a>
+  </dd>
+  <dd>
+    <code>Gemfile.lock</code> <a href="https://bundler.io/man/bundle-install.1.html#THE-GEMFILE-LOCK">reference</a>
+  </dd>
+</dl>
 </main>
 <section id="icons">
 <a href="mailto:samkennerly@gmail.com"><img alt="Email" src="../../media/icons/gmail.svg" height="32" title="Email"></a>

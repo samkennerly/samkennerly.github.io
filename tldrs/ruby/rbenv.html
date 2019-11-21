@@ -37,26 +37,22 @@
 </details>
 </nav>
 <main>
-<h1>rbenv quickstart</h1>
-<h2>abstract</h2>
+<h1>rbenv</h1><!-- -->
+<h2 id="abstract">abstract</h2><!-- -->
+<p><a href="https://github.com/rbenv/rbenv">rbenv</a> and <a href="https://github.com/rbenv/ruby-build">ruby-build</a> are <a href="https://en.wikipedia.org/wiki/Bash_(Unix_shell)">shell scripts</a> which install and manage Ruby versions.</p>
+<h2 id="basics">basics</h2><!-- -->
 <ul>
-  <li>
-    <a href="https://github.com/rbenv/rbenv">rbenv</a> is a <a href="https://en.wikipedia.org/wiki/Bash_(Unix_shell)">shell</a> script which manages Ruby versions.
-  </li>
-  <li>
-    <a href="https://github.com/rbenv/ruby-build">ruby-build</a> is a <a href="https://en.wikipedia.org/wiki/Bash_(Unix_shell)">bash</a> script which installs Ruby versions.
-  </li>
-  <li>The <code>~/.rbenv/shims</code> folder contains <a href="https://github.com/rbenv/rbenv#understanding-shims">shim executables</a> .
-  </li>
   <li>The <code>~/.rbenv/versions</code> folder contains installed Ruby versions.</li>
   <li>The <code>~/.rbenv/version</code> file sets <a href="https://github.com/rbenv/rbenv#rbenv-global">global Ruby</a> for a user.
+  </li>
+  <li>The <code>~/.rbenv/shims</code> folder contains <a href="https://github.com/rbenv/rbenv#understanding-shims">shim executables</a>.
   </li>
   <li>Any <code>.ruby-version</code> file sets <a href="https://github.com/rbenv/rbenv#rbenv-local">local Ruby</a> for a folder and its descendents.
   </li>
   <li>Any <code>RBENV_VERSION</code> <a href="https://en.wikipedia.org/wiki/Environment_variable">environment variable</a> overrules global and local Ruby.
   </li>
-</ul>See <a href="https://github.com/rbenv/rbenv#how-it-works">How It Works</a> for details.
-<h2>commands</h2>
+</ul>
+<h2 id="commands">commands</h2><!-- -->
 <table>
   <tr>
     <td>install rbenv</td>
@@ -100,8 +96,8 @@
     <td>revert to default Ruby</td>
     <td><code>rbenv shell --unset</code></td>
   </tr>
-</table>See the <a href="https://github.com/rbenv/rbenv#command-reference">Command Reference</a> for details.
-<h2>dependencies</h2>
+</table>
+<h2 id="dependencies">dependencies</h2><!-- -->
 <ul>
   <li>
     <a href="https://brew.sh/">Homebrew</a> must be installed to use <code>brew</code> commands.
@@ -109,14 +105,27 @@
   <li>
     <a href="https://rvm.io/">RVM</a> must <strong>not</strong> be installed.
   </li>
-</ul>See <a href="https://github.com/rbenv/rbenv#installation">Installation</a> for details.
-<h2>examples</h2>
-<h3>Set local Ruby for a project.</h3>
+</ul>
+<h2 id="examples">examples</h2><!-- -->
+Set local Ruby for a project:
 <pre>
 cd path/to/myproject
 echo '2.6.3' &gt; .ruby-version
 rbenv install --skip-existing 2.6.3
 </pre>See <a href="https://github.com/rbenv/rbenv#installing-ruby-versions">Installing Ruby versions</a> for details.
+<h2 id="faq">faq</h2><!-- -->
+<dl>
+  <dt>Where are the official docs?</dt>
+  <dd>
+    rbenv <a href="https://github.com/rbenv/rbenv#installation">installation</a>
+  </dd>
+  <dd>
+    rbenv <a href="https://github.com/rbenv/rbenv#command-reference">commands</a>
+  </dd>
+  <dd>
+    rbenv <a href="https://github.com/rbenv/rbenv#how-it-works">explanation</a>
+  </dd>
+</dl>
 </main>
 <section id="icons">
 <a href="mailto:samkennerly@gmail.com"><img alt="Email" src="../../media/icons/gmail.svg" height="32" title="Email"></a>

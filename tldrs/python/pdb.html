@@ -39,10 +39,11 @@
 <main>
 <h1>python pdb</h1><!-- -->
 <h2 id="abstract">abstract</h2><!-- -->
-<a href="https://docs.python.org/3/library/pdb.html">pdb</a> is Python's <a href="https://en.wikipedia.org/wiki/Debugger">debugger</a>.
+<p><a href="https://docs.python.org/3/library/pdb.html">pdb</a> is Python's built-in <a href="https://en.wikipedia.org/wiki/Debugger">debugger</a>.</p>
 <h2 id="basics">basics</h2><!-- -->
 <ul>
-  <li>pdb is a built-in Python <a href="https://docs.python.org/3/tutorial/modules.html">module</a>.
+  <li>
+    <code>pdb</code> is a Python <a href="https://docs.python.org/3/tutorial/modules.html">module</a>.
   </li>
   <li>
     <code>python -m pdb</code> runs pdb <a href="https://docs.python.org/3/tutorial/modules.html#executing-modules-as-scripts">like a script</a>.
@@ -99,31 +100,6 @@
 </table>
 <table>
   <caption>
-    set breakpoints
-  </caption>
-  <tr>
-    <td>show breakpoints</td>
-    <td><code>b</code></td>
-  </tr>
-  <tr>
-    <td>set breakpoint at line 13</td>
-    <td><code>b 13</code></td>
-  </tr>
-  <tr>
-    <td>set breakpoint inside <code>func()</code></td>
-    <td><code>b func</code></td>
-  </tr>
-  <tr>
-    <td>clear all breakpoints</td>
-    <td><code>cl</code></td>
-  </tr>
-  <tr>
-    <td>clear 3rd breakpoint</td>
-    <td><code>cl 3</code></td>
-  </tr>
-</table>
-<table>
-  <caption>
     show context
   </caption>
   <tr>
@@ -171,8 +147,33 @@
     <td><code>u 5</code></td>
   </tr>
 </table>
+<table>
+  <caption>
+    set breakpoints
+  </caption>
+  <tr>
+    <td>show breakpoints</td>
+    <td><code>b</code></td>
+  </tr>
+  <tr>
+    <td>set breakpoint at line 13</td>
+    <td><code>b 13</code></td>
+  </tr>
+  <tr>
+    <td>set breakpoint inside <code>func()</code></td>
+    <td><code>b func</code></td>
+  </tr>
+  <tr>
+    <td>clear all breakpoints</td>
+    <td><code>cl</code></td>
+  </tr>
+  <tr>
+    <td>clear 3rd breakpoint</td>
+    <td><code>cl 3</code></td>
+  </tr>
+</table>
 <h2 id="dependencies">dependencies</h2><!-- -->
-<p>The <code>pdb</code> module comes <a href="https://docs.python.org/3/library/">built-in</a> with Python.</p>
+<p>pdb is included with Python.</p>
 <h2 id="examples">examples</h2><!-- -->
 Run pdb like a script:
 <pre>
@@ -192,12 +193,16 @@ Type "help", "copyright", "credits" or "license" for more information.
 </pre>
 <h2 id="faq">faq</h2><!-- -->
 <dl>
+  <dt>Where are the official docs?</dt>
+  <dd>
+    pdb <a href="https://docs.python.org/3/library/pdb.html">module docs</a>
+  </dd>
   <dt>Where can I find other tutorials?</dt>
   <dd>
-    <a href="https://www.digitalocean.com/community/tutorials/how-to-use-the-python-debugger">DigitalOcean</a>
+    <a href="https://www.digitalocean.com/community/tutorials/how-to-use-the-python-debugger">DigitalOcean</a> pdb tutorial
   </dd>
   <dd>
-    <a href="https://djangostars.com/blog/debugging-python-applications-with-pdb/">Djangostars</a>
+    <a href="https://djangostars.com/blog/debugging-python-applications-with-pdb/">Djangostars</a> pdb tutorial
   </dd>
 </dl>
 </main>

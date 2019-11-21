@@ -37,79 +37,76 @@
 </details>
 </nav>
 <main>
-<h1>RubyGems quickstart</h1>
-<h2>abstract</h2>
+<h1>rubygems</h1><!-- -->
+<h2 id="abstract">abstract</h2><!-- -->
+<p><a href="https://guides.rubygems.org/">RubyGems</a> is Ruby's <a href="https://en.wikipedia.org/wiki/Package_manager">package manager</a>.</p>
+<h2 id="basics">basics</h2><!-- -->
 <ul>
   <li>
-    <a href="https://guides.rubygems.org/what-is-a-gem/">Gems</a> are self-contained Ruby packages.
+    <a href="https://guides.rubygems.org/what-is-a-gem/">Gems</a> are installable Ruby libraries and/or applications.
   </li>
-  <li>
-    <a href="https://guides.rubygems.org/command-reference/">RubyGems</a> is a <a href="https://en.wikipedia.org/wiki/Package_manager">package manager</a> for Ruby.
+  <li>RubyGems is a program which installs gems and their <a href="https://en.wikipedia.org/wiki/Coupling_(computer_programming)">dependencies</a>.
   </li>
   <li>
     <code>gem</code> is the <a href="https://en.wikipedia.org/wiki/Command-line_interface">shell</a> command which runs RubyGems.
   </li>
-</ul>See the <a href="https://guides.rubygems.org/">RubyGems guides</a> for details.
-<h2>commands</h2>These commmands use <a href="https://github.com/ruby/rake">rake</a> as an example gem.
+  <li>RubyGems typically downloads gems from <a href="https://rubygems.org/">rubygems.org</a>.
+  </li>
+  <li>RubyGems can also download gems from private <a href="https://en.wikipedia.org/wiki/Software_repository">repositories</a>.
+  </li>
+</ul>
+<h2 id="commands">commands</h2><!-- -->
+These commmands use <a href="https://ruby.github.io/rake/">rake</a> as an example gem.
 <table>
   <tr>
-    <td>install RubyGems</td>
-    <td>Ruby &gt;= 1.9 includes RubyGems.</td>
-  </tr>
-  <tr>
-    <td>show RubyGems environment</td>
+    <td>show environment</td>
     <td><code>gem env</code></td>
   </tr>
   <tr>
     <td>update RubyGems</td>
-    <td><code>sudo gem update --system</code></td>
+    <td><code>gem update --system</code></td>
   </tr>
   <tr>
     <td>find gems by name</td>
     <td><code>gem search rake</code></td>
   </tr>
   <tr>
-    <td>
-      find gems by <a href="https://en.wikipedia.org/wiki/Regular_expression">regex</a>
-    </td>
-    <td><code>gem search ^rake$</code></td>
-  </tr>
-  <tr>
     <td>install a gem</td>
-    <td><code>sudo gem install rake</code></td>
-  </tr>
-  <tr>
-    <td>install a gem version</td>
-    <td><code>sudo gem install rake:12.3.2</code></td>
+    <td><code>gem install rake</code></td>
   </tr>
   <tr>
     <td>uninstall a gem</td>
-    <td><code>sudo gem uninstall rake</code></td>
+    <td><code>gem uninstall rake</code></td>
   </tr>
   <tr>
     <td>show installed gems</td>
     <td><code>gem list --local</code></td>
   </tr>
   <tr>
-    <td>show a gem install path</td>
+    <td>show path to an installed gem</td>
     <td><code>gem which rake</code></td>
   </tr>
-</table>See the <a href="https://guides.rubygems.org/rubygems-basics/">RubyGems basics</a> for details.
-<h2>dependencies</h2>Some commands may require <a href="https://en.wikipedia.org/wiki/Sudo">superuser</a> permissions.
-<h2>examples</h2>
-<h3>install a specific gem version</h3>
+</table>
+<h2 id="dependencies">dependencies</h2><!-- -->
+RubyGems is included with Ruby 1.9+.
+<h2 id="examples">examples</h2><!-- -->
+Install a specific version of <a href="https://ruby.github.io/rake/">rake</a> :
 <pre>
-gem install nokogiri:1.5.6
-</pre>RubyGems will automatically:
-<ul>
-  <li>check if any gems named <code>nokogiri</code> are already installed</li>
-  <li>download <code>nokogiri-1.5.6.gem</code> from <a href="https://rubygems.org/">rubygems.org</a>
-  </li>
-  <li>uncompress the file and build any <a href="https://guides.rubygems.org/gems-with-extensions/">gem extensions</a>
-  </li>
-  <li>install any other gems required by <code>nokogiri:1.5.6</code></li>
-  <li>build documentation for installed gems</li>
-</ul>See the <a href="https://guides.rubygems.org/command-reference/#gem-install">gem install docs</a> for details.
+gem install rake:13.3.2
+</pre>Use a <a href="https://en.wikipedia.org/wiki/Regular_expression">regex</a> to find gems whose names start with <code>rake</code>:
+<pre>
+gem search ^rake
+</pre>
+<h2 id="faq">faq</h2><!-- -->
+<dl>
+  <dt>Where are the official docs?</dt>
+  <dd>
+    RubyGems <a href="https://guides.rubygems.org/">guides</a>
+  </dd>
+  <dd>
+    <code>gem install</code> <a href="https://guides.rubygems.org/command-reference/#gem-install">reference</a>
+  </dd>
+</dl>
 </main>
 <section id="icons">
 <a href="mailto:samkennerly@gmail.com"><img alt="Email" src="../../media/icons/gmail.svg" height="32" title="Email"></a>

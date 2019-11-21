@@ -37,41 +37,60 @@
 </details>
 </nav>
 <main>
-<h1>UNDER CONSTRUCTION</h1>
-<h2>abstract</h2>
+<h1>python pdb</h1><!-- -->
+<h2 id="abstract">abstract</h2><!-- -->
+<a href="https://docs.python.org/3/library/pdb.html">pdb</a> is Python's <a href="https://en.wikipedia.org/wiki/Debugger">debugger</a>.
+<h2 id="basics">basics</h2><!-- -->
 <ul>
-  <li>Python includes a <a href="https://en.wikipedia.org/wiki/Debugger">debugger</a> named <a href="https://docs.python.org/3/library/pdb.html">pdb</a>.
+  <li>pdb is a built-in Python <a href="https://docs.python.org/3/tutorial/modules.html">module</a>.
   </li>
-  <li>The pdb <a href="https://docs.python.org/3/tutorial/modules.html">module</a> can be <a href="https://docs.python.org/3/tutorial/modules.html#executing-modules-as-scripts">run like a script</a> with <code>python -m pdb</code>.
+  <li>
+    <code>python -m pdb</code> runs pdb <a href="https://docs.python.org/3/tutorial/modules.html#executing-modules-as-scripts">like a script</a>.
   </li>
-  <li>Python 2 and 3 include pdb as a <a href="https://docs.python.org/3/library/">built-in</a> module.
+  <li><code>python -m pdb myscript.py</code> runs <code>myscript.py</code> and starts pdb.</li>
+  <li>Python's <a href="https://docs.python.org/3/library/functions.html#breakpoint">breakpoint()</a> function interrupts a script (or module) to start pdb.
   </li>
 </ul>
-<h2>basics</h2>
-<ol>
-  <li>Open a <a href="https://en.wikipedia.org/wiki/Command-line_interface">terminal</a>.
-  </li>
-</ol>
-<h2>commands</h2>
+<h2 id="commands">commands</h2><!-- -->
 <table>
   <caption>
-    controls
+    run code
   </caption>
   <tr>
-    <td>execute <code>statement</code></td>
-    <td><code>!statement</code></td>
+    <td>show help menu</td>
+    <td><code>h</code></td>
   </tr>
   <tr>
-    <td>help menu</td>
-    <td><code>h</code></td>
+    <td>continue until breakpoint</td>
+    <td><code>c</code></td>
+  </tr>
+  <tr>
+    <td>run until next line</td>
+    <td><code>n</code></td>
+  </tr>
+  <tr>
+    <td>run until function returns</td>
+    <td><code>r</code></td>
+  </tr>
+  <tr>
+    <td>run script again</td>
+    <td><code>run</code></td>
+  </tr>
+  <tr>
+    <td>step inside function</td>
+    <td><code>s</code></td>
+  </tr>
+  <tr>
+    <td>run until line 13</td>
+    <td><code>unt 13</code></td>
   </tr>
   <tr>
     <td>start interpreter</td>
     <td><code>interact</code></td>
   </tr>
   <tr>
-    <td>run script again</td>
-    <td><code>run</code></td>
+    <td>execute <code>statement</code></td>
+    <td><code>!statement</code></td>
   </tr>
   <tr>
     <td>quit debugger</td>
@@ -80,7 +99,7 @@
 </table>
 <table>
   <caption>
-    breakpoints
+    set breakpoints
   </caption>
   <tr>
     <td>show breakpoints</td>
@@ -102,39 +121,6 @@
     <td>clear 3rd breakpoint</td>
     <td><code>cl 3</code></td>
   </tr>
-  <tr>
-    <td>down 5 levels in stack trace</td>
-    <td><code>d 5</code></td>
-  </tr>
-  <tr>
-    <td>up 5 levels in stack trace</td>
-    <td><code>u 5</code></td>
-  </tr>
-</table>
-<table>
-  <caption>
-    run code
-  </caption>
-  <tr>
-    <td>continue until breakpoint</td>
-    <td><code>c</code></td>
-  </tr>
-  <tr>
-    <td>run until line 13</td>
-    <td><code>unt 13</code></td>
-  </tr>
-  <tr>
-    <td>run until next line</td>
-    <td><code>n</code></td>
-  </tr>
-  <tr>
-    <td>run until function returns</td>
-    <td><code>r</code></td>
-  </tr>
-  <tr>
-    <td>step inside function</td>
-    <td><code>s</code></td>
-  </tr>
 </table>
 <table>
   <caption>
@@ -149,16 +135,16 @@
     <td><code>l</code></td>
   </tr>
   <tr>
+    <td>list lines in current frame</td>
+    <td><code>ll</code></td>
+  </tr>
+  <tr>
     <td>list lines near line 13</td>
     <td><code>l 13</code></td>
   </tr>
   <tr>
     <td>list lines from 13 through 20</td>
     <td><code>l 13 20</code></td>
-  </tr>
-  <tr>
-    <td>list lines in current frame</td>
-    <td><code>ll</code></td>
   </tr>
   <tr>
     <td>print value of <code>x</code></td>
@@ -176,16 +162,44 @@
     <td>where are we in stack trace?</td>
     <td><code>w</code></td>
   </tr>
+  <tr>
+    <td>down 5 levels in stack trace</td>
+    <td><code>d 5</code></td>
+  </tr>
+  <tr>
+    <td>up 5 levels in stack trace</td>
+    <td><code>u 5</code></td>
+  </tr>
 </table>
-<h2>dependencies</h2>
-<h2>examples</h2>
-<h2>see also</h2>
-<ul>
-  <li>tutorial by <a href="https://djangostars.com/blog/debugging-python-applications-with-pdb/">Djangostars</a>
-  </li>
-  <li>tutorial by <a href="https://www.digitalocean.com/community/tutorials/how-to-use-the-python-debugger">DigitalOcean</a>
-  </li>
-</ul>
+<h2 id="dependencies">dependencies</h2><!-- -->
+<p>The <code>pdb</code> module comes <a href="https://docs.python.org/3/library/">built-in</a> with Python.</p>
+<h2 id="examples">examples</h2><!-- -->
+Run pdb like a script:
+<pre>
+python -m pdb
+</pre>Run <code>path/to/myscript.py</code> and start pdb:
+<pre>
+python -m pdb path/to/myscript.py
+</pre>Start pdb from inside a Python interpreter:
+<pre>
+python3
+Python 3.7.0 (default, Aug 17 2018, 21:14:48)
+[Clang 9.1.0 (clang-902.0.39.2)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+&gt;&gt;&gt; breakpoint()
+--Return--
+&gt; &lt;stdin&gt;(1)&lt;module&gt;()-&gt;None
+</pre>
+<h2 id="faq">faq</h2><!-- -->
+<dl>
+  <dt>Where can I find other tutorials?</dt>
+  <dd>
+    <a href="https://www.digitalocean.com/community/tutorials/how-to-use-the-python-debugger">DigitalOcean</a>
+  </dd>
+  <dd>
+    <a href="https://djangostars.com/blog/debugging-python-applications-with-pdb/">Djangostars</a>
+  </dd>
+</dl>
 </main>
 <section id="icons">
 <a href="mailto:samkennerly@gmail.com"><img alt="Email" src="../../media/icons/gmail.svg" height="32" title="Email"></a>

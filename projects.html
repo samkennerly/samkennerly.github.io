@@ -18,7 +18,7 @@
 <a href="#">projects</a>
 <a href="quartos.html">quartos</a>
 <details><summary>random</summary>
-<a href="random/docker_kitchen.html">docker kitchen</a>
+<a href="random/docker_kitchens.html">docker kitchens</a>
 </details>
 <details><summary>science</summary>
 <a href="science/presentations.html">presentations</a>
@@ -68,10 +68,8 @@ Some of my public software projects are listed here. For <a href="https://www.ur
   <dt>
     <a href="https://github.com/samkennerly/pykea/">pykea</a> (UNDER CONSTRUCTION)
   </dt>
-  <dd>
-    Cheap, lightweight Python data structures. No external <a href="https://pip.pypa.io/en/stable/user_guide/#requirements-files">requirements</a>.
-  </dd>
-  <dd>Includes expandable tables, expiring caches, ring buffers, and more.</dd>
+  <dd>Lightweight, affordable Python data structures.</dd>
+  <dd>Expandable tables, expiring caches, ring buffers, and more.</dd>
   <dt>
     <a href="http://github.com/samkennerly/quarto/">quarto</a>
   </dt>
@@ -79,7 +77,7 @@ Some of my public software projects are listed here. For <a href="https://www.ur
     <a href="https://help.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template">Template</a> for a lean <a href="https://en.wikipedia.org/wiki/Static_web_page">static website</a> which builds itself with Python scripts.
   </dd>
   <dd>
-    It is a site made by a simple script, free of state and frameworks, <a href="https://pip.pypa.io/en/stable/user_guide/#requirements-files">pip requiring</a> nothing.
+    Made by a simple script, free of state and frameworks, <a href="https://pip.pypa.io/en/stable/user_guide/#requirements-files">pip requiring</a> nothing.
   </dd>
 </dl>
 <h2>q / kdb+</h2><!-- -->
@@ -88,26 +86,28 @@ Some of my public software projects are listed here. For <a href="https://www.ur
     <a href="https://github.com/samkennerly/q_practice/">q_practice</a>
   </dt>
   <dd>
-    Introduction to <a href="https://kx.com/connect-with-us/download/">q</a>, the scripting language for <a href="https://en.wikipedia.org/wiki/Kdb%2B">kdb+</a> timeseries databases.
+    Introduction to <a href="https://kx.com/connect-with-us/download/">Q</a>, the scripting language for <a href="https://en.wikipedia.org/wiki/Kdb%2B">KDB+</a> databases.
   </dd>
-  <dd>Includes adverbs, dicts, dots, lambdas, projections, and a <code>flip enlist system "v"</code>.</dd>
+  <dd>Adverbs, dicts, dots, lambdas, projections, and a <code>flip enlist system "v"</code>.</dd>
 </dl>
 <h2>ruby</h2><!-- -->
 <dl>
   <dt>
     <a href="https://github.com/samkennerly/assimilate/">assimilate</a>
   </dt>
-  <dd>Scripts for setting up a new Mac machine.</dd>
+  <dd>Force a new Mac to comply with my preferences.</dd>
   <dd>
-    <a href="https://brew.sh/">Brews</a> apps, <a href="https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository">clones</a> repos, sets <a href="https://developer.apple.com/documentation/foundation/nsuserdefaults">defaults</a>, and <a href="https://en.wikipedia.org/wiki/Symbolic_link">symlinks</a> to <a href="https://dotfiles.github.io/">dotfiles</a>.
+    <a href="https://brew.sh/">Brew</a> apps, <a href="https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository">clone</a> repos, set <a href="https://developer.apple.com/documentation/foundation/nsuserdefaults">defaults</a>, and create <a href="https://en.wikipedia.org/wiki/Symbolic_link">symlinks</a> to <a href="https://dotfiles.github.io/">dotfiles</a>.
   </dd>
   <dt>
     <a href="https://github.com/samkennerly/jekyllbox/">jekyllbox</a>
   </dt>
   <dd>
-    <a href="https://help.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template">Template</a> for a <a href="https://jekyllrb.com/">Jekyll</a> website in a <a href="https://www.docker.com/resources/what-container">container</a>.
+    Run <a href="https://jekyllrb.com/">Jekyll</a> in a <a href="https://www.docker.com/resources/what-container">Docker container</a>.
   </dd>
-  <dd>Build websites without installing a Ruby developer environment.</dd>
+  <dd>
+    Build <a href="https://en.wikipedia.org/wiki/Static_web_page">static websites</a> without installing a <a href="https://medium.com/windmill-engineering/how-i-built-a-simple-static-jekyll-site-without-installing-ruby-a-rant-b7e87fb123d0">Ruby developer environment</a>.
+  </dd>
 </dl>
 <h2>shell</h2><!-- -->
 <dl>
@@ -115,7 +115,7 @@ Some of my public software projects are listed here. For <a href="https://www.ur
     <a href="https://github.com/samkennerly/blackbox/">blackbox</a>
   </dt>
   <dd>
-    <a href="https://black.readthedocs.io/en/stable/">Black</a>, the uncompromising Python code formatter, in a <a href="https://www.docker.com/resources/what-container">container</a>.
+    Run <a href="https://black.readthedocs.io/en/stable/">Black</a> (the uncompromising Python code formatter) in a <a href="https://www.docker.com/resources/what-container">Docker container</a>.
   </dd>
   <dd>
     All code is in one <a href="https://en.wikipedia.org/wiki/Shell_script">shell script</a>, including a <code>Dockerfile</code> <a href="http://tldp.org/LDP/abs/html/here-docs.html">heredoc</a>.
@@ -134,10 +134,10 @@ Some of my public software projects are listed here. For <a href="https://www.ur
     <a href="https://github.com/samkennerly/ec2box/">ec2box</a> (UNDER CONSTRUCTION)
   </dt>
   <dd>
-    Simplified <a href="https://aws.amazon.com/ec2/">Amazon EC2</a> instance launcher.
+    Launch an <a href="https://aws.amazon.com/ec2/">Amazon EC2</a> instance with <a href="https://www.terraform.io/">Terraform.</a>
   </dd>
   <dd>
-    Creates an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM role</a>, VPC <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html">security group</a>, and Terraform <a href="https://www.terraform.io/docs/backends/index.html">backend</a> in a <a href="https://aws.amazon.com/s3/">bucket</a>.
+    Also creates an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM role</a>, VPC <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html">security group</a>, and/or <a href="https://aws.amazon.com/s3/">bucket</a>.
   </dd>
 </dl>
 </main>

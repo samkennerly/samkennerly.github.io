@@ -18,7 +18,6 @@
 <a href="../projects.html">projects</a>
 <a href="../quartos.html">quartos</a>
 <details open><summary>random</summary>
-<a href="docker_kitchens.html">docker kitchens</a>
 <a href="#">ssh keys</a>
 </details>
 <details><summary>science</summary>
@@ -64,7 +63,7 @@
   <li>A <dfn>private key</dfn> is a hint for decrypting those messages. Private keys should never be shown to anyone.</li>
 </ol>Public-key encryption is often used to send a temporary <a href="https://en.wikipedia.org/wiki/Shared_secret">shared secret</a> which can only be read by a specific person. A faster scheme like <a href="https://en.wikipedia.org/wiki/Advanced_Encryption_Standard">AES/Rijndael</a> can then be used to encrypt messages.
 <blockquote>
-  Diane wants to send an important message to Dale. Bob, who is evil, wants to trick Dale.
+  <p>Diane wants to send an important message to Dale. Bob, who is evil, wants to trick Dale.</p>
   <p>DIANE: Hello, Dale. It's me, Diane.</p>
   <p>BOB: Hello, Dale. It's me, Diane.</p>
   <p>Dale generates a temporary AES password and uses Diane's public SSH key to encrypt it.</p>
@@ -100,68 +99,70 @@ which ssh
 man ssh
 </pre>
 <p>SSH keys and settings are (usually) stored in an <code>.ssh</code> <a href="https://en.wikipedia.org/wiki/Directory_(computing)">folder</a> in each user's home folder.</p>
-<table>
-  <tr>
-    <th>name</th>
-    <th>type</th>
-    <th>
-      <a href="https://en.wikipedia.org/wiki/File_system_permissions#Numeric_notation">permissions</a>
-    </th>
-    <th>contents</th>
-  </tr>
-  <tr>
-    <td>.ssh</td>
-    <td>folder</td>
-    <td>700</td>
-    <td>OpenSSH keys and settings</td>
-  </tr>
-  <tr>
-    <td>.ssh/authorized_keys</td>
-    <td>text file</td>
-    <td>600</td>
-    <td>public keys allowed to login as this user</td>
-  </tr>
-  <tr>
-    <td>.ssh/config</td>
-    <td>text file</td>
-    <td>600</td>
-    <td>
-      settings for <a href="https://linux.die.net/man/1/ssh-agent">ssh-agent</a>
-    </td>
-  </tr>
-  <tr>
-    <td>.ssh/environment</td>
-    <td>text file</td>
-    <td>600</td>
-    <td>
-      extra <a href="https://en.wikipedia.org/wiki/Environment_variable">environment variables</a> for OpenSSH commands
-    </td>
-  </tr>
-  <tr>
-    <td>.ssh/id_rsa</td>
-    <td>text file</td>
-    <td>600</td>
-    <td>a private RSA key</td>
-  </tr>
-  <tr>
-    <td>.ssh/id_rsa.pub</td>
-    <td>text file</td>
-    <td>644</td>
-    <td>a public RSA key</td>
-  </tr>
-  <tr>
-    <td>.ssh/known_hosts</td>
-    <td>text file</td>
-    <td>644</td>
-    <td>IP addresses with known public keys</td>
-  </tr>
-  <tr>
-    <td>.ssh/rc</td>
-    <td>script</td>
-    <td>700</td>
-    <td>run these commands when user logs in</td>
-  </tr>
-</table>
+<div>
+  <table>
+    <tr>
+      <th>name</th>
+      <th>type</th>
+      <th>
+        <a href="https://en.wikipedia.org/wiki/File_system_permissions#Numeric_notation">permissions</a>
+      </th>
+      <th>contents</th>
+    </tr>
+    <tr>
+      <td>.ssh</td>
+      <td>folder</td>
+      <td>700</td>
+      <td>OpenSSH keys and settings</td>
+    </tr>
+    <tr>
+      <td>.ssh/authorized_keys</td>
+      <td>text file</td>
+      <td>600</td>
+      <td>public keys allowed to login as this user</td>
+    </tr>
+    <tr>
+      <td>.ssh/config</td>
+      <td>text file</td>
+      <td>600</td>
+      <td>
+        settings for <a href="https://linux.die.net/man/1/ssh-agent">ssh-agent</a>
+      </td>
+    </tr>
+    <tr>
+      <td>.ssh/environment</td>
+      <td>text file</td>
+      <td>600</td>
+      <td>
+        extra <a href="https://en.wikipedia.org/wiki/Environment_variable">environment variables</a> for OpenSSH commands
+      </td>
+    </tr>
+    <tr>
+      <td>.ssh/id_rsa</td>
+      <td>text file</td>
+      <td>600</td>
+      <td>a private RSA key</td>
+    </tr>
+    <tr>
+      <td>.ssh/id_rsa.pub</td>
+      <td>text file</td>
+      <td>644</td>
+      <td>a public RSA key</td>
+    </tr>
+    <tr>
+      <td>.ssh/known_hosts</td>
+      <td>text file</td>
+      <td>644</td>
+      <td>IP addresses with known public keys</td>
+    </tr>
+    <tr>
+      <td>.ssh/rc</td>
+      <td>script</td>
+      <td>700</td>
+      <td>run these commands when user logs in</td>
+    </tr>
+  </table>
+</div>
 <p>Each <code>.ssh</code> folder can store multiple keys with different names like:</p>
 <pre>
 github_rsa
@@ -210,7 +211,7 @@ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 <a href="https://twitter.com/data_lore/"><img alt="Twitter" src="../media/icons/twitter.svg" height="32" title="Twitter"></a>
 </section>
 <section id="jump">
-<a href="docker_kitchens.html" rel="prev">--</a>
+<a href="../quartos.html" rel="prev">--</a>
 <a href="#" id="updog">return</a>
 <a href="../science/research.html" rel="next">++</a>
 </section>

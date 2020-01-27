@@ -51,135 +51,143 @@
   </li>
 </ul>
 <h2 id="commands">commands</h2><!-- -->
-<table>
-  <caption>
-    run code
-  </caption>
-  <tr>
-    <td>show help menu</td>
-    <td><code>h</code></td>
-  </tr>
-  <tr>
-    <td>continue until breakpoint</td>
-    <td><code>c</code></td>
-  </tr>
-  <tr>
-    <td>run until next line</td>
-    <td><code>n</code></td>
-  </tr>
-  <tr>
-    <td>run until function returns</td>
-    <td><code>r</code></td>
-  </tr>
-  <tr>
-    <td>run script again</td>
-    <td><code>run</code></td>
-  </tr>
-  <tr>
-    <td>step inside function</td>
-    <td><code>s</code></td>
-  </tr>
-  <tr>
-    <td>run until line 13</td>
-    <td><code>unt 13</code></td>
-  </tr>
-  <tr>
-    <td>start interpreter</td>
-    <td><code>interact</code></td>
-  </tr>
-  <tr>
-    <td>execute <code>statement</code></td>
-    <td><code>!statement</code></td>
-  </tr>
-  <tr>
-    <td>quit debugger</td>
-    <td><code>q</code></td>
-  </tr>
-</table>
-<table>
-  <caption>
-    show context
-  </caption>
-  <tr>
-    <td>arguments for current function</td>
-    <td><code>args</code></td>
-  </tr>
-  <tr>
-    <td>list lines near current line</td>
-    <td><code>l</code></td>
-  </tr>
-  <tr>
-    <td>list lines in current frame</td>
-    <td><code>ll</code></td>
-  </tr>
-  <tr>
-    <td>list lines near line 13</td>
-    <td><code>l 13</code></td>
-  </tr>
-  <tr>
-    <td>list lines from 13 through 20</td>
-    <td><code>l 13 20</code></td>
-  </tr>
-  <tr>
-    <td>print value of <code>x</code></td>
-    <td><code>p x</code></td>
-  </tr>
-  <tr>
-    <td>pretty-print value of <code>x</code></td>
-    <td><code>pp x</code></td>
-  </tr>
-  <tr>
-    <td>source code of <code>x</code></td>
-    <td><code>source x</code></td>
-  </tr>
-  <tr>
-    <td>where are we in stack trace?</td>
-    <td><code>w</code></td>
-  </tr>
-  <tr>
-    <td>down 5 levels in stack trace</td>
-    <td><code>d 5</code></td>
-  </tr>
-  <tr>
-    <td>up 5 levels in stack trace</td>
-    <td><code>u 5</code></td>
-  </tr>
-</table>
-<table>
-  <caption>
-    set breakpoints
-  </caption>
-  <tr>
-    <td>show breakpoints</td>
-    <td><code>b</code></td>
-  </tr>
-  <tr>
-    <td>set breakpoint at line 13</td>
-    <td><code>b 13</code></td>
-  </tr>
-  <tr>
-    <td>set breakpoint inside <code>func()</code></td>
-    <td><code>b func</code></td>
-  </tr>
-  <tr>
-    <td>clear all breakpoints</td>
-    <td><code>cl</code></td>
-  </tr>
-  <tr>
-    <td>clear 3rd breakpoint</td>
-    <td><code>cl 3</code></td>
-  </tr>
-</table>
+<div>
+  <table>
+    <caption>
+      run code
+    </caption>
+    <tr>
+      <td>show help menu</td>
+      <td><code>h</code></td>
+    </tr>
+    <tr>
+      <td>continue until breakpoint</td>
+      <td><code>c</code></td>
+    </tr>
+    <tr>
+      <td>run until next line</td>
+      <td><code>n</code></td>
+    </tr>
+    <tr>
+      <td>run until function returns</td>
+      <td><code>r</code></td>
+    </tr>
+    <tr>
+      <td>run script again</td>
+      <td><code>run</code></td>
+    </tr>
+    <tr>
+      <td>step inside function</td>
+      <td><code>s</code></td>
+    </tr>
+    <tr>
+      <td>run until line 13</td>
+      <td><code>unt 13</code></td>
+    </tr>
+    <tr>
+      <td>start interpreter</td>
+      <td><code>interact</code></td>
+    </tr>
+    <tr>
+      <td>execute <code>statement</code></td>
+      <td><code>!statement</code></td>
+    </tr>
+    <tr>
+      <td>quit debugger</td>
+      <td><code>q</code></td>
+    </tr>
+  </table>
+</div>
+<div>
+  <table>
+    <caption>
+      show context
+    </caption>
+    <tr>
+      <td>arguments for current function</td>
+      <td><code>args</code></td>
+    </tr>
+    <tr>
+      <td>list lines near current line</td>
+      <td><code>l</code></td>
+    </tr>
+    <tr>
+      <td>list lines in current frame</td>
+      <td><code>ll</code></td>
+    </tr>
+    <tr>
+      <td>list lines near line 13</td>
+      <td><code>l 13</code></td>
+    </tr>
+    <tr>
+      <td>list lines from 13 through 20</td>
+      <td><code>l 13 20</code></td>
+    </tr>
+    <tr>
+      <td>print value of <code>x</code></td>
+      <td><code>p x</code></td>
+    </tr>
+    <tr>
+      <td>pretty-print value of <code>x</code></td>
+      <td><code>pp x</code></td>
+    </tr>
+    <tr>
+      <td>source code of <code>x</code></td>
+      <td><code>source x</code></td>
+    </tr>
+    <tr>
+      <td>where are we in stack trace?</td>
+      <td><code>w</code></td>
+    </tr>
+    <tr>
+      <td>down 5 levels in stack trace</td>
+      <td><code>d 5</code></td>
+    </tr>
+    <tr>
+      <td>up 5 levels in stack trace</td>
+      <td><code>u 5</code></td>
+    </tr>
+  </table>
+</div>
+<div>
+  <table>
+    <caption>
+      set breakpoints
+    </caption>
+    <tr>
+      <td>show breakpoints</td>
+      <td><code>b</code></td>
+    </tr>
+    <tr>
+      <td>set breakpoint at line 13</td>
+      <td><code>b 13</code></td>
+    </tr>
+    <tr>
+      <td>set breakpoint inside <code>func()</code></td>
+      <td><code>b func</code></td>
+    </tr>
+    <tr>
+      <td>clear all breakpoints</td>
+      <td><code>cl</code></td>
+    </tr>
+    <tr>
+      <td>clear 3rd breakpoint</td>
+      <td><code>cl 3</code></td>
+    </tr>
+  </table>
+</div>
 <h2 id="dependencies">dependencies</h2><!-- -->
 <p>pdb is included with Python.</p>
 <h2 id="examples">examples</h2><!-- -->
-Run pdb like a script:
+<p>Run pdb like a script:</p>
 <pre>
 python -m pdb
-</pre>Run <code>path/to/myscript.py</code> and start pdb:
+</pre>
+<p>Run <code>path/to/myscript.py</code> and start pdb:</p>
 <pre>
 python -m pdb path/to/myscript.py
-</pre>Start pdb from inside a Python interpreter:
+</pre>
+<p>Start pdb from inside a Python interpreter:</p>
 <pre>
 python3
 Python 3.7.0 (default, Aug 17 2018, 21:14:48)

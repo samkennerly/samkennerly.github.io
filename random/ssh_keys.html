@@ -35,7 +35,7 @@
 </details>
 </nav>
 <main>
-<h1>SSH keys: how do they work?</h1>
+<h1>SSH keys: how do they work?</h1><!-- -->
 <ol start="0">
   <li>
     <a href="#what_is_ssh">What is SSH?</a>
@@ -47,7 +47,8 @@
     <a href="#how_do_i_use_openssh">How do I use OpenSSH?</a>
   </li>
 </ol>
-<h2 id="what_is_ssh">What is SSH?</h2>Several related things are named <dfn>SSH</dfn>:
+<h2 id="what_is_ssh">What is SSH?</h2><!-- -->
+<p>Several related things are named <dfn>SSH</dfn>:</p>
 <ul>
   <li>
     <a href="https://www.ssh.com/ssh/protocol">Secure Shell</a> is a networking protocol.
@@ -57,23 +58,25 @@
   <li>
     <a href="https://www.ssh.com/">SSH Communications Security</a> is a company founded by the <a href="https://ylonen.org/">author</a> of Secure Shell.
   </li>
-</ul>The Secure Shell protocol uses <a href="https://en.wikipedia.org/wiki/Public-key_cryptography">public-key encryption</a>. Keys are generated in pairs:
+</ul>
+<p>The Secure Shell protocol uses <a href="https://en.wikipedia.org/wiki/Public-key_cryptography">public-key encryption</a>. Keys are generated in pairs:</p>
 <ol start="0">
   <li>A <dfn>public key</dfn> is a recipe for encrypting messages. Public keys can be published anywhere.</li>
   <li>A <dfn>private key</dfn> is a hint for decrypting those messages. Private keys should never be shown to anyone.</li>
-</ol>Public-key encryption is often used to send a temporary <a href="https://en.wikipedia.org/wiki/Shared_secret">shared secret</a> which can only be read by a specific person. A faster scheme like <a href="https://en.wikipedia.org/wiki/Advanced_Encryption_Standard">AES/Rijndael</a> can then be used to encrypt messages.
+</ol>
+<p>Public-key encryption is often used to send a temporary <a href="https://en.wikipedia.org/wiki/Shared_secret">shared secret</a> which can only be read by a specific person. A faster scheme like <a href="https://en.wikipedia.org/wiki/Advanced_Encryption_Standard">AES/Rijndael</a> can then be used to encrypt messages.</p>
 <blockquote>
-  <p>Diane wants to send an important message to Dale. Bob, who is evil, wants to trick Dale.</p>
+  Diane wants to send an important message to Dale. Bob, who is evil, wants to trick Dale.
   <p>DIANE: Hello, Dale. It's me, Diane.</p>
   <p>BOB: Hello, Dale. It's me, Diane.</p>
-  <p>Dale generates a temporary AES password and uses Diane's public SSH key to encrypt it.</p>
-  <p>DALE: Let's use AES. I will send you a password.</p>
-  <p>Dale sends copies of the encrypted password to Bob and Diane. Diane uses her private SSH key to decrypt it. Bob cannot.</p>
-  <p>DIANE: (AES-encrypted with the temporary password) The owls are not what they seem.</p>
+  <p>Dale generates a random AES password. He uses Diane's public SSH key to encrypt it.</p>
+  <p>DALE: Hello, Dianes. Let's use AES. I will send you a password.</p>
+  <p>Dale sends the encrypted password to Bob and Diane. Diane uses her private SSH key to decrypt it. Bob cannot.</p>
+  <p>DIANE: (AES-encrypted) The owls are not what they seem.</p>
   <p>DALE: *mistrusts owls*</p>
   <p>BOB: Dammit.</p>
 </blockquote>
-<p>For mathematical details, here is an <a href="https://samkennerly.github.io/media/science/rsa_encryption.pdf">RSA tutorial</a> and a <a href="https://github.com/samkennerly/Fidelio">toy program</a>.</p>
+<p>For mathematical details, here's an <a href="https://samkennerly.github.io/media/science/rsa_encryption.pdf">RSA tutorial</a> and a <a href="https://github.com/samkennerly/Fidelio">toy program</a>.</p>
 <h2 id="what_does_ssh_do">What does SSH do?</h2><!-- -->
 <p>Secure Shell is commonly used to control a computer from another computer's <a href="https://en.wikipedia.org/wiki/Command-line_interface">terminal</a>.</p>
 <figure>
@@ -93,10 +96,6 @@
 <p>OpenSSH is freely available at <a href="https://www.openssh.com/">openssh.com</a>. See if it has already been installed:</p>
 <pre>
 which ssh
-</pre>
-<p>Show the instruction manual:</p>
-<pre>
-man ssh
 </pre>
 <p>SSH keys and settings are (usually) stored in an <code>.ssh</code> <a href="https://en.wikipedia.org/wiki/Directory_(computing)">folder</a> in each user's home folder.</p>
 <div>
@@ -177,8 +176,7 @@ paintedeagle_ecdsa.pub
   <li>A public key has suffix <code>.pub</code></li>
   <li>A private key has the same name, but with no suffix.</li>
   <li>RSA key names end with <code>_rsa</code>, ECDSA keys end with <code>_ecdsa</code>, etc.</li>
-</ul>
-<p>Run <code>ssh-keygen</code> to generate keys interactively. It will ask a few questions:</p>
+</ul>Run <code>ssh-keygen</code> to generate keys interactively. It will ask a few questions:
 <ul>
   <li>Where to save the private key?</li>
   <li>Require a password to use the private key?</li>
@@ -202,6 +200,10 @@ ssh-keygen -t rsa -b 2048
 <p>Generate a 4096-bit RSA keypair (with a comment) for <a href="https://help.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent">GitHub</a>:</p>
 <pre>
 ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+</pre>
+<p>Show the instruction manual:</p>
+<pre>
+man ssh
 </pre>
 </main>
 <section id="icons">

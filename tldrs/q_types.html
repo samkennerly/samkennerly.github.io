@@ -51,10 +51,10 @@
   </li>
 </ul>
 <h2 id="contents">contents</h2><!-- -->
-<figure>
+<div>
   <table>
     <caption>
-      q datatype codes
+      q datatypes
     </caption>
     <tr>
       <th>n</th>
@@ -400,7 +400,7 @@
       <td>dynamic load</td>
     </tr>
   </table>
-</figure>
+</div>
 <h2 id="dependencies">dependencies</h2><!-- -->
 <ul>
   <li>
@@ -408,7 +408,7 @@
   </li>
 </ul>
 <h2 id="examples">examples</h2><!-- -->
-Atoms have negative types. Lists have positive types.
+<p>Atoms have negative types. Lists have positive types.</p>
 <pre>
 q)type 23
 -7h
@@ -420,17 +420,20 @@ q)type (1;2;3;4;5)
 7h
 q)type each 1,2,3,4,5
 -7 -7 -7 -7 -7h
-</pre>A <q>string</q> is a list of chars.
+</pre>
+<p>A <q>string</q> is a list of chars.</p>
 <pre>
 q)type "Hello, World!"
 10h
-</pre>Cast a string as a symbol.
+</pre>
+<p>Cast a string as a symbol.</p>
 <pre>
 q)` $ "Hello, World!"
 `Hello, World!
 q)-11h $ "Hello, World!"
 `Hello, World!
-</pre>Convert a list of symbols to a list of strings.
+</pre>
+<p>Convert a list of symbols to a list of strings.</p>
 <pre>
 q)type `one`two`three`four`five
 11h

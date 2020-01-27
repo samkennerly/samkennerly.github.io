@@ -37,8 +37,7 @@
 <main>
 <h1>docker</h1><!-- -->
 <h2 id="abstract">abstract</h2><!-- -->
-<p>The <code>docker</code> <a href="https://en.wikipedia.org/wiki/Console_application">command-line utility</a> builds and runs <a href="https://en.wikipedia.org/wiki/OS-level_virtualization">containers</a>.</p>
-<p>Containers can be used to increase <a href="https://en.wikipedia.org/wiki/Reproducible_builds">reproducibility</a> and decrease <a href="https://en.wikipedia.org/wiki/Coupling_(computer_programming)">coupling</a> of software projects.</p>
+<p><a href="https://www.docker.com/">Docker</a> is a software platform which builds and runs <a href="https://en.wikipedia.org/wiki/OS-level_virtualization">containers</a>. Containers can simulate other computers with different software installed. Development containers can help increase <a href="https://en.wikipedia.org/wiki/Reproducible_builds">reproducibility</a> and decrease <a href="https://en.wikipedia.org/wiki/Coupling_(computer_programming)">coupling</a>.</p>
 <h2 id="basics">basics</h2><!-- -->
 <ul>
   <li>A <dfn>host machine</dfn> is a computer which can run containers.</li>
@@ -56,44 +55,46 @@
   </li>
 </ul>
 <h2 id="commands">commands</h2><!-- -->
-<table>
-  <tr>
-    <td>build <code>myimage</code> from a <code>Dockerfile</code> in the current folder</td>
-    <td><code>docker build myimage .</code></td>
-  </tr>
-  <tr>
-    <td>run a container from <code>myimage</code></td>
-    <td><code>docker run myimage</code></td>
-  </tr>
-  <tr>
-    <td>run <code>ls -la</code> in a container from <code>myimage</code></td>
-    <td><code>docker run myimage ls -la</code></td>
-  </tr>
-  <tr>
-    <td>show all containers</td>
-    <td><code>docker ps --all</code></td>
-  </tr>
-  <tr>
-    <td>show all images</td>
-    <td><code>docker image ls</code></td>
-  </tr>
-  <tr>
-    <td>show all volumes</td>
-    <td><code>docker volume ls</code></td>
-  </tr>
-  <tr>
-    <td>show all networks</td>
-    <td><code>docker network ls</code></td>
-  </tr>
-  <tr>
-    <td>delete <code>myimage</code></td>
-    <td><code>docker image rm myimage</code></td>
-  </tr>
-  <tr>
-    <td>delete unused docker objects</td>
-    <td><code>docker system prune</code></td>
-  </tr>
-</table>
+<div>
+  <table>
+    <tr>
+      <td>build <code>myimage</code> from a <code>Dockerfile</code> in the current folder</td>
+      <td><code>docker build myimage .</code></td>
+    </tr>
+    <tr>
+      <td>run a container from <code>myimage</code></td>
+      <td><code>docker run myimage</code></td>
+    </tr>
+    <tr>
+      <td>run <code>ls -la</code> in a container from <code>myimage</code></td>
+      <td><code>docker run myimage ls -la</code></td>
+    </tr>
+    <tr>
+      <td>show all containers</td>
+      <td><code>docker ps --all</code></td>
+    </tr>
+    <tr>
+      <td>show all images</td>
+      <td><code>docker image ls</code></td>
+    </tr>
+    <tr>
+      <td>show all volumes</td>
+      <td><code>docker volume ls</code></td>
+    </tr>
+    <tr>
+      <td>show all networks</td>
+      <td><code>docker network ls</code></td>
+    </tr>
+    <tr>
+      <td>delete <code>myimage</code></td>
+      <td><code>docker image rm myimage</code></td>
+    </tr>
+    <tr>
+      <td>delete unused docker objects</td>
+      <td><code>docker system prune</code></td>
+    </tr>
+  </table>
+</div>
 <h2 id="dependencies">dependencies</h2><!-- -->
 <ul>
   <li>
@@ -107,20 +108,24 @@
   </li>
 </ul>
 <h2 id="examples">examples</h2><!-- -->
-Build an image named <code>myimage:v2</code> from a <code>Dockerfile</code> in <code>some/folder</code>:
+<p>Build an image named <code>myimage:v2</code> from a <code>Dockerfile</code> in <code>some/folder</code>:</p>
 <pre>
 docker build --tag myimage:v2 some/folder
-</pre>Run <code>bash</code> interactively in a self-destructing container from the <code>myimage:v2</code> image:
+</pre>
+<p>Run <code>bash</code> interactively in a self-destructing container from the <code>myimage:v2</code> image:</p>
 <pre>
 docker run --rm --interactive --tty myimage:v2 bash
-</pre>Run the default <code>myimage:v2</code> command with the current folder mounted read-only as <code>/context</code>:
+</pre>
+<p>Run the default <code>myimage:v2</code> command with the current folder mounted read-only as <code>/context</code>:</p>
 <pre>
 docker run --volume "$(pwd):/context:ro" myimage:v2
-</pre>Delete the <code>myimage:v2</code> image and any containers using it:
+</pre>
+<p>Delete the <code>myimage:v2</code> image and any containers using it:</p>
 <pre>
 docker ps --quiet --filter ancestor="myimage:v2" | xargs docker rm --force
 docker image rm myimage:v2 --force
-</pre>Stop all containers, then delete stopped containers and unused objects:
+</pre>
+<p>Stop all containers, then delete stopped containers and unused objects:</p>
 <pre>
 docker ps --quiet | xargs docker kill
 docker system prune --force

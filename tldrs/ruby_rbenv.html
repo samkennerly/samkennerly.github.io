@@ -51,50 +51,52 @@
   </li>
 </ul>
 <h2 id="commands">commands</h2><!-- -->
-<table>
-  <tr>
-    <td>install rbenv</td>
-    <td><code>brew install rbenv</code></td>
-  </tr>
-  <tr>
-    <td>uninstall rbenv</td>
-    <td><code>brew uninstall rbenv</code></td>
-  </tr>
-  <tr>
-    <td>upgrade rbenv</td>
-    <td><code>brew upgrade rbenv ruby-build</code></td>
-  </tr>
-  <tr>
-    <td>
-      <a href="https://github.com/rbenv/rbenv#how-rbenv-hooks-into-your-shell">modify shell</a> to use rbenv
-    </td>
-    <td><code>eval "$(rbenv init -)"</code></td>
-  </tr>
-  <tr>
-    <td>show installed Rubies</td>
-    <td><code>rbenv versions</code></td>
-  </tr>
-  <tr>
-    <td>show available Rubies</td>
-    <td><code>rbenv install --list</code></td>
-  </tr>
-  <tr>
-    <td>install a Ruby</td>
-    <td><code>rbenv install 2.6.3</code></td>
-  </tr>
-  <tr>
-    <td>uninstall a Ruby</td>
-    <td><code>rbenv uninstall 2.6.3</code></td>
-  </tr>
-  <tr>
-    <td>use an installed Ruby</td>
-    <td><code>rbenv shell 2.6.3</code></td>
-  </tr>
-  <tr>
-    <td>revert to default Ruby</td>
-    <td><code>rbenv shell --unset</code></td>
-  </tr>
-</table>
+<div>
+  <table>
+    <tr>
+      <td>install rbenv</td>
+      <td><code>brew install rbenv</code></td>
+    </tr>
+    <tr>
+      <td>uninstall rbenv</td>
+      <td><code>brew uninstall rbenv</code></td>
+    </tr>
+    <tr>
+      <td>upgrade rbenv</td>
+      <td><code>brew upgrade rbenv ruby-build</code></td>
+    </tr>
+    <tr>
+      <td>
+        <a href="https://github.com/rbenv/rbenv#how-rbenv-hooks-into-your-shell">modify shell</a> to use rbenv
+      </td>
+      <td><code>eval "$(rbenv init -)"</code></td>
+    </tr>
+    <tr>
+      <td>show installed Rubies</td>
+      <td><code>rbenv versions</code></td>
+    </tr>
+    <tr>
+      <td>show available Rubies</td>
+      <td><code>rbenv install --list</code></td>
+    </tr>
+    <tr>
+      <td>install a Ruby</td>
+      <td><code>rbenv install 2.6.3</code></td>
+    </tr>
+    <tr>
+      <td>uninstall a Ruby</td>
+      <td><code>rbenv uninstall 2.6.3</code></td>
+    </tr>
+    <tr>
+      <td>use an installed Ruby</td>
+      <td><code>rbenv shell 2.6.3</code></td>
+    </tr>
+    <tr>
+      <td>revert to default Ruby</td>
+      <td><code>rbenv shell --unset</code></td>
+    </tr>
+  </table>
+</div>
 <h2 id="dependencies">dependencies</h2><!-- -->
 <ul>
   <li>
@@ -105,12 +107,13 @@
   </li>
 </ul>
 <h2 id="examples">examples</h2><!-- -->
-Set local Ruby for a project:
+<p>Set local Ruby for a project:</p>
 <pre>
 cd path/to/myproject
 echo '2.6.3' &gt; .ruby-version
 rbenv install --skip-existing 2.6.3
-</pre>See <a href="https://github.com/rbenv/rbenv#installing-ruby-versions">Installing Ruby versions</a> for details.
+</pre>
+<p>See <a href="https://github.com/rbenv/rbenv#installing-ruby-versions">Installing Ruby versions</a> for details.</p>
 <h2 id="faq">faq</h2><!-- -->
 <dl>
   <dt>Where are the official docs?</dt>

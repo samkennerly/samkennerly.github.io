@@ -37,8 +37,7 @@
 <main>
 <h1>ruby bundler</h1><!-- -->
 <h2 id="abstract">abstract</h2><!-- -->
-<p><a href="https://bundler.io/docs.html">Bundler</a> is a <a href="https://www.ruby-lang.org/en/">Ruby</a> <a href="https://guides.rubygems.org/what-is-a-gem/">gem</a> which installs Ruby gems.</p>
-<p>Bundler is often used to install a unique <q>bundle</q> of gems for each software project on a machine. Keeping projects' gems separated helps developers avoid <a href="https://en.wikipedia.org/wiki/Dependency_hell">dependency hell</a>.</p>
+<p><a href="https://bundler.io/docs.html">Bundler</a> is a <a href="https://www.ruby-lang.org/en/">Ruby</a> <a href="https://guides.rubygems.org/what-is-a-gem/">gem</a> which installs Ruby gems. Bundler installs a separate <q>bundle</q> of gems for each software project on a machine. Keeping projects' gems separated helps developers avoid <a href="https://en.wikipedia.org/wiki/Dependency_hell">dependency hell</a>.</p>
 <h2 id="basics">basics</h2><!-- -->
 <ol>
   <li>Open a <a href="https://en.wikipedia.org/wiki/Command-line_interface">terminal</a> and <code>cd</code> to a project's top-level folder.
@@ -51,59 +50,61 @@
   <li>Bundler automatically updates Gemfile.lock on subsequent runs.</li>
 </ol>
 <h2 id="commands">commands</h2><!-- -->
-The <a href="https://ruby.github.io/rake/">rake</a> gem is used here as an example.
-<table>
-  <tr>
-    <td>install Bundler</td>
-    <td><code>gem install bundler</code></td>
-  </tr>
-  <tr>
-    <td>uninstall Bundler</td>
-    <td><code>gem uninstall bundler</code></td>
-  </tr>
-  <tr>
-    <td>update Bundler</td>
-    <td><code>gem update bundler</code></td>
-  </tr>
-  <tr>
-    <td>create a minimal <code>Gemfile</code></td>
-    <td><code>bundle init</code></td>
-  </tr>
-  <tr>
-    <td>install all gems in <code>Gemfile</code></td>
-    <td><code>bundle install</code></td>
-  </tr>
-  <tr>
-    <td>remove unused gems</td>
-    <td><code>bundle clean</code></td>
-  </tr>
-  <tr>
-    <td>update <code>rake</code></td>
-    <td><code>bundle update rake</code></td>
-  </tr>
-  <tr>
-    <td>show path to <code>rake</code></td>
-    <td><code>bundle show rake</code></td>
-  </tr>
-  <tr>
-    <td>start interactive Ruby</td>
-    <td><code>bundle exec irb</code></td>
-  </tr>
-  <tr>
-    <td>show installed gems</td>
-    <td><code>bundle exec gem list</code></td>
-  </tr>
-  <tr>
-    <td>run a Ruby script</td>
-    <td><code>bundle exec ruby path/to/script.rb</code></td>
-  </tr>
-  <tr>
-    <td>
-      track gems with <a href="https://git-scm.com/">git</a>
-    </td>
-    <td><code>git add Gemfile Gemfile.lock</code></td>
-  </tr>
-</table>
+<p>The <a href="https://ruby.github.io/rake/">rake</a> gem is used here as an example.</p>
+<div>
+  <table>
+    <tr>
+      <td>install Bundler</td>
+      <td><code>gem install bundler</code></td>
+    </tr>
+    <tr>
+      <td>uninstall Bundler</td>
+      <td><code>gem uninstall bundler</code></td>
+    </tr>
+    <tr>
+      <td>update Bundler</td>
+      <td><code>gem update bundler</code></td>
+    </tr>
+    <tr>
+      <td>create a minimal <code>Gemfile</code></td>
+      <td><code>bundle init</code></td>
+    </tr>
+    <tr>
+      <td>install all gems in <code>Gemfile</code></td>
+      <td><code>bundle install</code></td>
+    </tr>
+    <tr>
+      <td>remove unused gems</td>
+      <td><code>bundle clean</code></td>
+    </tr>
+    <tr>
+      <td>update <code>rake</code></td>
+      <td><code>bundle update rake</code></td>
+    </tr>
+    <tr>
+      <td>show path to <code>rake</code></td>
+      <td><code>bundle show rake</code></td>
+    </tr>
+    <tr>
+      <td>start interactive Ruby</td>
+      <td><code>bundle exec irb</code></td>
+    </tr>
+    <tr>
+      <td>show installed gems</td>
+      <td><code>bundle exec gem list</code></td>
+    </tr>
+    <tr>
+      <td>run a Ruby script</td>
+      <td><code>bundle exec ruby path/to/script.rb</code></td>
+    </tr>
+    <tr>
+      <td>
+        track gems with <a href="https://git-scm.com/">git</a>
+      </td>
+      <td><code>git add Gemfile Gemfile.lock</code></td>
+    </tr>
+  </table>
+</div>
 <h2 id="dependencies">dependencies</h2><!-- -->
 <ul>
   <li>
@@ -114,7 +115,7 @@ The <a href="https://ruby.github.io/rake/">rake</a> gem is used here as an examp
   </li>
 </ul>
 <h2 id="examples">examples</h2><!-- -->
-Example <code>Gemfile</code> file:
+<p>Example <code>Gemfile</code> file:</p>
 <pre>
 ruby '~&gt; 2.3'
 source 'https://rubygems.org' do
@@ -123,7 +124,8 @@ source 'https://rubygems.org' do
     gem 'rack',  '&gt;=1.0'
     gem 'thin',  '~&gt;1.1'
 end
-</pre>Example <code>.gitignore</code> file:
+</pre>
+<p>Example <code>.gitignore</code> file:</p>
 <pre>
 .bundle/           # Bundler config files
 vendor/bundle      # Locally-installed gem files

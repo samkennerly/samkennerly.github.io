@@ -32,6 +32,7 @@
 <a href="ruby_bundler.html">ruby bundler</a>
 <a href="ruby_gems.html">ruby gems</a>
 <a href="ruby_rbenv.html">ruby rbenv</a>
+<a href="terraform.html">terraform</a>
 </details>
 </nav>
 <main>
@@ -57,44 +58,44 @@
       run code
     </caption>
     <tr>
-      <td>show help menu</td>
-      <td><code>h</code></td>
-    </tr>
-    <tr>
-      <td>continue until breakpoint</td>
       <td><code>c</code></td>
+      <td>continue until breakpoint</td>
     </tr>
     <tr>
-      <td>run until next line</td>
-      <td><code>n</code></td>
+      <td><code>h</code></td>
+      <td>show help menu</td>
     </tr>
     <tr>
-      <td>run until function returns</td>
-      <td><code>r</code></td>
-    </tr>
-    <tr>
-      <td>run script again</td>
-      <td><code>run</code></td>
-    </tr>
-    <tr>
-      <td>step inside function</td>
-      <td><code>s</code></td>
-    </tr>
-    <tr>
-      <td>run until line 13</td>
-      <td><code>unt 13</code></td>
-    </tr>
-    <tr>
-      <td>start interpreter</td>
       <td><code>interact</code></td>
+      <td>start interpreter</td>
     </tr>
     <tr>
-      <td>execute <code>statement</code></td>
-      <td><code>!statement</code></td>
+      <td><code>n</code></td>
+      <td>run until next line</td>
     </tr>
     <tr>
-      <td>quit debugger</td>
       <td><code>q</code></td>
+      <td>quit debugger</td>
+    </tr>
+    <tr>
+      <td><code>r</code></td>
+      <td>run until function returns</td>
+    </tr>
+    <tr>
+      <td><code>run</code></td>
+      <td>run script again</td>
+    </tr>
+    <tr>
+      <td><code>s</code></td>
+      <td>step inside function</td>
+    </tr>
+    <tr>
+      <td><code>unt 13</code></td>
+      <td>run until line 13</td>
+    </tr>
+    <tr>
+      <td><code>!statement</code></td>
+      <td>execute <code>statement</code></td>
     </tr>
   </table>
 </div>
@@ -104,48 +105,48 @@
       show context
     </caption>
     <tr>
-      <td>arguments for current function</td>
       <td><code>args</code></td>
+      <td>arguments for current function</td>
     </tr>
     <tr>
-      <td>list lines near current line</td>
-      <td><code>l</code></td>
-    </tr>
-    <tr>
-      <td>list lines in current frame</td>
-      <td><code>ll</code></td>
-    </tr>
-    <tr>
-      <td>list lines near line 13</td>
-      <td><code>l 13</code></td>
-    </tr>
-    <tr>
-      <td>list lines from 13 through 20</td>
-      <td><code>l 13 20</code></td>
-    </tr>
-    <tr>
-      <td>print value of <code>x</code></td>
-      <td><code>p x</code></td>
-    </tr>
-    <tr>
-      <td>pretty-print value of <code>x</code></td>
-      <td><code>pp x</code></td>
-    </tr>
-    <tr>
-      <td>source code of <code>x</code></td>
-      <td><code>source x</code></td>
-    </tr>
-    <tr>
-      <td>where are we in stack trace?</td>
-      <td><code>w</code></td>
-    </tr>
-    <tr>
-      <td>down 5 levels in stack trace</td>
       <td><code>d 5</code></td>
+      <td>down 5 levels in stack trace</td>
     </tr>
     <tr>
-      <td>up 5 levels in stack trace</td>
+      <td><code>l</code></td>
+      <td>list lines near current line</td>
+    </tr>
+    <tr>
+      <td><code>ll</code></td>
+      <td>list lines in current frame</td>
+    </tr>
+    <tr>
+      <td><code>l 13</code></td>
+      <td>list lines near line 13</td>
+    </tr>
+    <tr>
+      <td><code>l 13 20</code></td>
+      <td>list lines from 13 through 20</td>
+    </tr>
+    <tr>
+      <td><code>p x</code></td>
+      <td>print value of <code>x</code></td>
+    </tr>
+    <tr>
+      <td><code>pp x</code></td>
+      <td>pretty-print value of <code>x</code></td>
+    </tr>
+    <tr>
+      <td><code>source x</code></td>
+      <td>source code of <code>x</code></td>
+    </tr>
+    <tr>
+      <td><code>w</code></td>
+      <td>where are we in stack trace?</td>
+    </tr>
+    <tr>
       <td><code>u 5</code></td>
+      <td>up 5 levels in stack trace</td>
     </tr>
   </table>
 </div>
@@ -155,24 +156,24 @@
       set breakpoints
     </caption>
     <tr>
-      <td>show breakpoints</td>
       <td><code>b</code></td>
+      <td>show breakpoints</td>
     </tr>
     <tr>
-      <td>set breakpoint at line 13</td>
       <td><code>b 13</code></td>
+      <td>set breakpoint at line 13</td>
     </tr>
     <tr>
-      <td>set breakpoint inside <code>func()</code></td>
       <td><code>b func</code></td>
+      <td>set breakpoint inside <code>func()</code></td>
     </tr>
     <tr>
-      <td>clear all breakpoints</td>
       <td><code>cl</code></td>
+      <td>clear all breakpoints</td>
     </tr>
     <tr>
-      <td>clear 3rd breakpoint</td>
       <td><code>cl 3</code></td>
+      <td>clear 3rd breakpoint</td>
     </tr>
   </table>
 </div>

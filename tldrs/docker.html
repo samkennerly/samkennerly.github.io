@@ -32,6 +32,7 @@
 <a href="ruby_bundler.html">ruby bundler</a>
 <a href="ruby_gems.html">ruby gems</a>
 <a href="ruby_rbenv.html">ruby rbenv</a>
+<a href="terraform.html">terraform</a>
 </details>
 </nav>
 <main>
@@ -58,40 +59,40 @@
 <div>
   <table>
     <tr>
-      <td>build <code>myimage</code> from a <code>Dockerfile</code> in the current folder</td>
       <td><code>docker build myimage .</code></td>
+      <td>build <code>myimage</code> from a <code>Dockerfile</code> in the current folder</td>
     </tr>
     <tr>
-      <td>run a container from <code>myimage</code></td>
-      <td><code>docker run myimage</code></td>
-    </tr>
-    <tr>
-      <td>run <code>ls -la</code> in a container from <code>myimage</code></td>
-      <td><code>docker run myimage ls -la</code></td>
-    </tr>
-    <tr>
-      <td>show all containers</td>
-      <td><code>docker ps --all</code></td>
-    </tr>
-    <tr>
-      <td>show all images</td>
       <td><code>docker image ls</code></td>
+      <td>show all images</td>
     </tr>
     <tr>
-      <td>show all volumes</td>
-      <td><code>docker volume ls</code></td>
-    </tr>
-    <tr>
-      <td>show all networks</td>
-      <td><code>docker network ls</code></td>
-    </tr>
-    <tr>
-      <td>delete <code>myimage</code></td>
       <td><code>docker image rm myimage</code></td>
+      <td>delete <code>myimage</code></td>
     </tr>
     <tr>
-      <td>delete unused docker objects</td>
+      <td><code>docker network ls</code></td>
+      <td>show all networks</td>
+    </tr>
+    <tr>
+      <td><code>docker ps --all</code></td>
+      <td>show all containers</td>
+    </tr>
+    <tr>
+      <td><code>docker run myimage</code></td>
+      <td>run a container from <code>myimage</code></td>
+    </tr>
+    <tr>
+      <td><code>docker run myimage ls -la</code></td>
+      <td>run <code>ls -la</code> in a container from <code>myimage</code></td>
+    </tr>
+    <tr>
       <td><code>docker system prune</code></td>
+      <td>delete unused docker objects</td>
+    </tr>
+    <tr>
+      <td><code>docker volume ls</code></td>
+      <td>show all volumes</td>
     </tr>
   </table>
 </div>

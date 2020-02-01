@@ -32,6 +32,7 @@
 <a href="#">ruby bundler</a>
 <a href="ruby_gems.html">ruby gems</a>
 <a href="ruby_rbenv.html">ruby rbenv</a>
+<a href="terraform.html">terraform</a>
 </details>
 </nav>
 <main>
@@ -39,7 +40,7 @@
 <h2 id="abstract">abstract</h2><!-- -->
 <p><a href="https://bundler.io/docs.html">Bundler</a> is a <a href="https://www.ruby-lang.org/en/">Ruby</a> <a href="https://guides.rubygems.org/what-is-a-gem/">gem</a> which installs Ruby gems. Bundler installs a separate <q>bundle</q> of gems for each software project on a machine. Keeping projects' gems separated helps developers avoid <a href="https://en.wikipedia.org/wiki/Dependency_hell">dependency hell</a>.</p>
 <h2 id="basics">basics</h2><!-- -->
-<ol>
+<ul>
   <li>Open a <a href="https://en.wikipedia.org/wiki/Command-line_interface">terminal</a> and <code>cd</code> to a project's top-level folder.
   </li>
   <li>Create a <a href="https://bundler.io/gemfile.html">Gemfile</a> listing the project's required gems and <a href="https://guides.rubygems.org/patterns/">version constraints</a>.
@@ -48,60 +49,64 @@
   <li>Bundler creates a <a href="https://bundler.io/man/bundle-install.1.html#THE-GEMFILE-LOCK">Gemfile.lock</a> file listing <a href="https://en.wikipedia.org/wiki/Package_manager#Upgrade_suppression">pinned versions</a> of all installed gems.
   </li>
   <li>Bundler automatically updates Gemfile.lock on subsequent runs.</li>
-</ol>
+</ul>
 <h2 id="commands">commands</h2><!-- -->
 <p>The <a href="https://ruby.github.io/rake/">rake</a> gem is used here as an example.</p>
 <div>
   <table>
+    <caption>
+      system commands
+    </caption>
     <tr>
-      <td>install Bundler</td>
       <td><code>gem install bundler</code></td>
+      <td>install Bundler</td>
     </tr>
     <tr>
-      <td>uninstall Bundler</td>
       <td><code>gem uninstall bundler</code></td>
+      <td>uninstall Bundler</td>
     </tr>
     <tr>
-      <td>update Bundler</td>
       <td><code>gem update bundler</code></td>
+      <td>update Bundler</td>
     </tr>
+  </table>
+</div>
+<div>
+  <table>
+    <caption>
+      project commands
+    </caption>
     <tr>
-      <td>create a minimal <code>Gemfile</code></td>
-      <td><code>bundle init</code></td>
-    </tr>
-    <tr>
-      <td>install all gems in <code>Gemfile</code></td>
-      <td><code>bundle install</code></td>
-    </tr>
-    <tr>
-      <td>remove unused gems</td>
       <td><code>bundle clean</code></td>
+      <td>remove unused gems</td>
     </tr>
     <tr>
-      <td>update <code>rake</code></td>
-      <td><code>bundle update rake</code></td>
-    </tr>
-    <tr>
-      <td>show path to <code>rake</code></td>
-      <td><code>bundle show rake</code></td>
-    </tr>
-    <tr>
-      <td>start interactive Ruby</td>
-      <td><code>bundle exec irb</code></td>
-    </tr>
-    <tr>
-      <td>show installed gems</td>
       <td><code>bundle exec gem list</code></td>
+      <td>show installed gems</td>
     </tr>
     <tr>
-      <td>run a Ruby script</td>
+      <td><code>bundle exec irb</code></td>
+      <td>start interactive Ruby</td>
+    </tr>
+    <tr>
       <td><code>bundle exec ruby path/to/script.rb</code></td>
+      <td>run a Ruby script</td>
     </tr>
     <tr>
-      <td>
-        track gems with <a href="https://git-scm.com/">git</a>
-      </td>
-      <td><code>git add Gemfile Gemfile.lock</code></td>
+      <td><code>bundle init</code></td>
+      <td>create a minimal <code>Gemfile</code> in current folder</td>
+    </tr>
+    <tr>
+      <td><code>bundle install</code></td>
+      <td>install all gems in <code>Gemfile</code></td>
+    </tr>
+    <tr>
+      <td><code>bundle show rake</code></td>
+      <td>show path to <code>rake</code></td>
+    </tr>
+    <tr>
+      <td><code>bundle update rake</code></td>
+      <td>update <code>rake</code></td>
     </tr>
   </table>
 </div>

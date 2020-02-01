@@ -32,6 +32,7 @@
 <a href="ruby_bundler.html">ruby bundler</a>
 <a href="ruby_gems.html">ruby gems</a>
 <a href="#">ruby rbenv</a>
+<a href="terraform.html">terraform</a>
 </details>
 </nav>
 <main>
@@ -53,55 +54,68 @@
 <h2 id="commands">commands</h2><!-- -->
 <div>
   <table>
+    <caption>
+      setup
+    </caption>
     <tr>
-      <td>install rbenv</td>
       <td><code>brew install rbenv</code></td>
+      <td>
+        install rbenv with <a href="https://brew.sh/">Homebrew</a>
+      </td>
     </tr>
     <tr>
-      <td>uninstall rbenv</td>
       <td><code>brew uninstall rbenv</code></td>
+      <td>
+        uninstall rbenv with <a href="https://brew.sh/">Homebrew</a>
+      </td>
     </tr>
     <tr>
-      <td>upgrade rbenv</td>
       <td><code>brew upgrade rbenv ruby-build</code></td>
+      <td>
+        upgrade rbenv with <a href="https://brew.sh/">Homebrew</a>
+      </td>
     </tr>
     <tr>
+      <td><code>eval "$(rbenv init -)"</code></td>
       <td>
         <a href="https://github.com/rbenv/rbenv#how-rbenv-hooks-into-your-shell">modify shell</a> to use rbenv
       </td>
-      <td><code>eval "$(rbenv init -)"</code></td>
     </tr>
+  </table>
+</div>
+<div>
+  <table>
+    <caption>
+      usage
+    </caption>
     <tr>
-      <td>show installed Rubies</td>
-      <td><code>rbenv versions</code></td>
-    </tr>
-    <tr>
-      <td>show available Rubies</td>
-      <td><code>rbenv install --list</code></td>
-    </tr>
-    <tr>
-      <td>install a Ruby</td>
       <td><code>rbenv install 2.6.3</code></td>
+      <td>install Ruby version 2.6.3</td>
     </tr>
     <tr>
-      <td>uninstall a Ruby</td>
-      <td><code>rbenv uninstall 2.6.3</code></td>
+      <td><code>rbenv install --list</code></td>
+      <td>show available Rubies</td>
     </tr>
     <tr>
-      <td>use an installed Ruby</td>
       <td><code>rbenv shell 2.6.3</code></td>
+      <td>use Ruby version 2.6.3</td>
     </tr>
     <tr>
-      <td>revert to default Ruby</td>
       <td><code>rbenv shell --unset</code></td>
+      <td>revert to using default Ruby</td>
+    </tr>
+    <tr>
+      <td><code>rbenv uninstall 2.6.3</code></td>
+      <td>remove Ruby version 2.6.3</td>
+    </tr>
+    <tr>
+      <td><code>rbenv versions</code></td>
+      <td>show installed Rubies</td>
     </tr>
   </table>
 </div>
 <h2 id="dependencies">dependencies</h2><!-- -->
 <ul>
-  <li>
-    <a href="https://brew.sh/">Homebrew</a> must be installed to use <code>brew</code> commands.
-  </li>
   <li>
     <a href="https://rvm.io/">RVM</a> must <strong>not</strong> be installed.
   </li>
@@ -137,7 +151,7 @@ rbenv install --skip-existing 2.6.3
 <section id="jump">
 <a href="ruby_gems.html" rel="prev">--</a>
 <a href="#" id="updog">return</a>
-<a href="../index.html" rel="next">++</a>
+<a href="terraform.html" rel="next">++</a>
 </section>
 <section id="klf">
 <span id="copyright">© Sam Kennerly 2019.</span>

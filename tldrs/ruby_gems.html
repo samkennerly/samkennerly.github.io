@@ -32,6 +32,7 @@
 <a href="ruby_bundler.html">ruby bundler</a>
 <a href="#">ruby gems</a>
 <a href="ruby_rbenv.html">ruby rbenv</a>
+<a href="terraform.html">terraform</a>
 </details>
 </nav>
 <main>
@@ -58,32 +59,34 @@
 <div>
   <table>
     <tr>
-      <td>show environment</td>
       <td><code>gem env</code></td>
+      <td>show environment</td>
     </tr>
     <tr>
-      <td>update RubyGems</td>
-      <td><code>gem update --system</code></td>
-    </tr>
-    <tr>
-      <td>find gems by name</td>
-      <td><code>gem search rake</code></td>
-    </tr>
-    <tr>
-      <td>install a gem</td>
       <td><code>gem install rake</code></td>
+      <td>install the <code>rake</code> gem</td>
     </tr>
     <tr>
-      <td>uninstall a gem</td>
-      <td><code>gem uninstall rake</code></td>
-    </tr>
-    <tr>
-      <td>show installed gems</td>
       <td><code>gem list --local</code></td>
+      <td>show installed gems</td>
     </tr>
     <tr>
-      <td>show path to an installed gem</td>
+      <td><code>gem search ^rake$</code></td>
+      <td>
+        find gems by <a href="https://en.wikipedia.org/wiki/Regular_expression">regex</a>
+      </td>
+    </tr>
+    <tr>
+      <td><code>gem uninstall rake</code></td>
+      <td>remove the <code>rake</code> gem</td>
+    </tr>
+    <tr>
+      <td><code>gem update --system</code></td>
+      <td>update RubyGems itself</td>
+    </tr>
+    <tr>
       <td><code>gem which rake</code></td>
+      <td>show path where the <code>rake</code> gem is installed</td>
     </tr>
   </table>
 </div>

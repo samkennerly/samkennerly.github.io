@@ -38,7 +38,7 @@
 <main>
 <h1>terraform</h1><!-- -->
 <h2 id="abstract">abstract</h2><!-- -->
-<a href="https://www.terraform.io/">Terraform</a> is a program which tracks and updates cloud-computing resources.
+<p><a href="https://www.terraform.io/">Terraform</a> is a program which tracks and updates cloud-computing resources.</p>
 <h2 id="basics">basics</h2><!-- -->
 <ul>
   <li>
@@ -112,19 +112,22 @@
   </li>
 </ul>
 <h2 id="examples">examples</h2><!-- -->
-Autoformat <code>staging</code> folder and check for errors.
+<p>Autoformat <code>staging</code> folder and check for errors.</p>
 <pre>
 terraform fmt staging
 terraform validate staging
-</pre>Save an <a href="https://www.terraform.io/docs/commands/plan.html">execution plan</a> for the <code>staging</code> folder, then show the plan in JSON format.
+</pre>
+<p>Save an <a href="https://www.terraform.io/docs/commands/plan.html">execution plan</a> for the <code>staging</code> folder, then show the plan in JSON format.</p>
 <pre>
 terraform plan -out myplan staging
 terraform show -json myplan
-</pre>Destroy and rebuild <code>some_resource</code> which was declared in the <code>staging</code> folder.
+</pre>
+<p>Destroy and rebuild <code>some_resource</code> which was declared in the <code>staging</code> folder.</p>
 <pre>
 terraform taint some_resource
 terraform apply staging
-</pre>Apply changes to <code>staging</code> folder without being prompted to confirm.
+</pre>
+<p>Apply changes to <code>staging</code> folder without being prompted to confirm.</p>
 <pre>
 terraform apply -auto-approve staging
 </pre>

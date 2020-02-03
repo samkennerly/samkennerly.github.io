@@ -38,8 +38,39 @@
 <main>
 <h1>projects</h1><!-- -->
 Some of my public software projects are listed here. For <a href="https://www.urbandictionary.com/define.php?term=Deep%20Cut">deep cuts</a>, see <a href="https://github.com/samkennerly/">github.com/samkennerly</a>.
+<h2>aws</h2><!-- -->
+<dl>
+  <dt>
+    <a href="https://github.com/samkennerly/ec2box/">ec2box</a>
+  </dt>
+  <dd>
+    Example <a href="https://www.terraform.io/">Terraform</a> module for provisioning <a href="https://aws.amazon.com/ec2/">AWS EC2 instances</a>.
+  </dd>
+  <dd>
+    Each box includes its own <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">keypair</a>, <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-security-groups.html">security group</a>, <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatchLogsConcepts.html">CloudWatch log group</a>, <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM role</a>, and <a href="https://cloudinit.readthedocs.io/en/latest/">cloud-init</a> template.
+  </dd>
+</dl>
+<h2>docker</h2><!-- -->
+<dl>
+  <dt>
+    <a href="https://github.com/samkennerly/dockerbash/">dockerbash</a>
+  </dt>
+  <dd>
+    Short <a href="https://en.wikipedia.org/wiki/Shell_script">shell scripts</a> for long Docker commands.
+  </dd>
+  <dd>Never type <code>docker ps -qf ancestor="myimage" | xargs docker rm -f</code> again.</dd>
+</dl>
 <h2>python</h2><!-- -->
 <dl>
+  <dt>
+    <a href="https://github.com/samkennerly/blackbox/">blackbox</a>
+  </dt>
+  <dd>
+    Run <a href="https://black.readthedocs.io/en/stable/">Black</a> (the uncompromising Python code formatter) in a <a href="https://www.docker.com/resources/what-container">Docker container</a>.
+  </dd>
+  <dd>
+    All code is in one <a href="https://en.wikipedia.org/wiki/Shell_script">shell script</a>, including a <code>Dockerfile</code> <a href="http://tldp.org/LDP/abs/html/here-docs.html">heredoc</a>.
+  </dd>
   <dt>
     <a href="https://github.com/samkennerly/brundling/">brundling</a>
   </dt>
@@ -47,7 +78,7 @@ Some of my public software projects are listed here. For <a href="https://www.ur
     Calculations and plots for the <a href="https://brundling.neocities.org/">7 Degrees of Martin Brundle</a>.
   </dd>
   <dd>
-    An exhibition of <a href="https://en.wikipedia.org/wiki/Lightweight_software">lightweight</a> data analysis and <a href="https://en.wikipedia.org/wiki/Graph_drawing">graph layout</a>.
+    An exhibition of <a href="https://en.wikipedia.org/wiki/Lightweight_software">lightweight</a> data analysis and <a href="https://en.wikipedia.org/wiki/Graph_drawing">graph layout</a> with <a href="https://pandas.pydata.org/">pandas</a>.
   </dd>
   <dt>
     <a href="https://github.com/samkennerly/fountain/">fountain</a>
@@ -111,37 +142,6 @@ Some of my public software projects are listed here. For <a href="https://www.ur
   </dd>
   <dd>
     Build <a href="https://en.wikipedia.org/wiki/Static_web_page">static websites</a> without installing a <a href="https://medium.com/windmill-engineering/how-i-built-a-simple-static-jekyll-site-without-installing-ruby-a-rant-b7e87fb123d0">Ruby developer environment</a>.
-  </dd>
-</dl>
-<h2>shell</h2><!-- -->
-<dl>
-  <dt>
-    <a href="https://github.com/samkennerly/blackbox/">blackbox</a>
-  </dt>
-  <dd>
-    Run <a href="https://black.readthedocs.io/en/stable/">Black</a> (the uncompromising Python code formatter) in a <a href="https://www.docker.com/resources/what-container">Docker container</a>.
-  </dd>
-  <dd>
-    All code is in one <a href="https://en.wikipedia.org/wiki/Shell_script">shell script</a>, including a <code>Dockerfile</code> <a href="http://tldp.org/LDP/abs/html/here-docs.html">heredoc</a>.
-  </dd>
-  <dt>
-    <a href="https://github.com/samkennerly/dockerbash/">dockerbash</a>
-  </dt>
-  <dd>
-    Short <a href="https://en.wikipedia.org/wiki/Shell_script">shell scripts</a> for long Docker commands.
-  </dd>
-  <dd>Never type <code>docker ps -qf ancestor="myimage" | xargs docker rm -f</code> again.</dd>
-</dl>
-<h2>terraform</h2><!-- -->
-<dl>
-  <dt>
-    <a href="https://github.com/samkennerly/ec2box/">ec2box</a> (UNDER CONSTRUCTION)
-  </dt>
-  <dd>
-    Launch an <a href="https://aws.amazon.com/ec2/">Amazon EC2</a> instance with <a href="https://www.terraform.io/">Terraform.</a>
-  </dd>
-  <dd>
-    Includes support for <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM roles</a>, VPC <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html">security groups</a>, and <a href="https://aws.amazon.com/s3/">buckets</a>.
   </dd>
 </dl>
 </main>

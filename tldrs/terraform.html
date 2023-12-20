@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Sam Kennerly</title>
+<link rel="canonical" href="https://samkennerly.github.io/tldrs/terraform.html">
+<link rel="icon" href="../favicon.png">
+<link rel="stylesheet" href="../style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Sam Kennerly">
+<meta name="description" content="Freelance data (analyst, cleaner, engineer, plumber, scientist) in New York City.">
+<meta name="keywords" content="data, docker, jupyter, kdb, python, ruby, science, terraform">
+<meta name="generator" content="https://quarto.neocities.org/">
+</head>
+<body>
+<nav>
+<a href="../index.html" rel="home">index</a>
+<a href="../projects.html">projects</a>
+<a href="../quartos.html">quartos</a>
+<details><summary>random</summary>
+<a href="../random/ssh_keys.html">ssh keys</a>
+</details>
+<details><summary>science</summary>
+<a href="../science/research.html">research</a>
+<a href="../science/slideshows.html">slideshows</a>
+<a href="../science/tutorials.html">tutorials</a>
+</details>
+<details open><summary>tldrs</summary>
+<a href="docker.html">docker</a>
+<a href="python_pdb.html">python pdb</a>
+<a href="q_types.html">q types</a>
+<a href="ruby_bundler.html">ruby bundler</a>
+<a href="ruby_gems.html">ruby gems</a>
+<a href="ruby_rbenv.html">ruby rbenv</a>
+<a href="#">terraform</a>
+</details>
+</nav>
+<main>
+<h1>terraform</h1><!-- -->
+<h2 id="abstract">abstract</h2><!-- -->
+<p><a href="https://www.terraform.io/">Terraform</a> is a program which tracks and updates cloud-computing resources.</p>
+<h2 id="basics">basics</h2><!-- -->
+<ul>
+  <li>
+    <a href="https://www.terraform.io/docs/cloud/workspaces/repo-structure.html">Repositories</a> are folders containing source code files in Terraform's <a href="https://www.terraform.io/docs/configuration/index.html">configuration language</a>.
+  </li>
+  <li>Each <a href="https://www.terraform.io/docs/configuration/modules.html">module</a> in a repository is defined by <code>main.tf</code>, <a href="https://learn.hashicorp.com/terraform/getting-started/outputs"><code>outputs.tf</code></a>, and <a href="https://www.terraform.io/docs/configuration/variables.html"><code>variables.tf</code></a> files.
+  </li>
+  <li>
+    <a href="https://www.terraform.io/docs/configuration/resources.html">Resources</a> like buckets, computers, and networks are <a href="https://en.wikipedia.org/wiki/Declarative_programming">declared</a> in <code>.tf</code> files.
+  </li>
+  <li>
+    <a href="https://www.terraform.io/docs/commands/init.html#plugin-installation">Plugins</a> for various cloud providers are used to provision resources.
+  </li>
+  <li>Text <a href="https://www.terraform.io/docs/configuration/functions/templatefile.html">template files</a> can substitute strings when commands are run.
+  </li>
+  <li>
+    <a href="https://www.terraform.io/docs/backends/state.html">State</a> can be stored in local or <a href="https://www.terraform.io/docs/state/remote.html">remote</a> <code>.tfstate</code> files.
+  </li>
+</ul>
+<h2 id="commands">commands</h2><!-- -->
+<div>
+  <table>
+    <tr>
+      <td><code>terraform apply [FOLDER]</code></td>
+      <td>update all resources declared in [FOLDER]</td>
+    </tr>
+    <tr>
+      <td><code>terraform console [FOLDER]</code></td>
+      <td>start interactive console (for debugging)</td>
+    </tr>
+    <tr>
+      <td><code>terraform destroy [FOLDER]</code></td>
+      <td>deactivate every resource declared in [FOLDER]</td>
+    </tr>
+    <tr>
+      <td><code>terraform fmt [FOLDER]</code></td>
+      <td>autoformat all <code>.tf</code> files in [FOLDER]</td>
+    </tr>
+    <tr>
+      <td><code>terraform init [FOLDER]</code></td>
+      <td>
+        install modules and do any necessary <a href="https://www.terraform.io/docs/commands/init.html">initialization</a>
+      </td>
+    </tr>
+    <tr>
+      <td><code>terraform output [VARIABLE]</code></td>
+      <td>show output variable(s)</td>
+    </tr>
+    <tr>
+      <td><code>terraform plan [FOLDER]</code></td>
+      <td>predict what <code>apply [FOLDER]</code> will do</td>
+    </tr>
+    <tr>
+      <td><code>terraform show</code></td>
+      <td>show current state (might include secrets!)</td>
+    </tr>
+    <tr>
+      <td><code>terraform taint [RESOURCE]</code></td>
+      <td>mark [RESOURCE] as broken, stale, and/or unsafe</td>
+    </tr>
+    <tr>
+      <td><code>terraform untaint [RESOURCE]</code></td>
+      <td>undo <code>terraform taint [RESOURCE]</code></td>
+    </tr>
+  </table>
+</div>
+<h2 id="dependencies">dependencies</h2><!-- -->
+<ul>
+  <li>
+    <a href="https://www.terraform.io/downloads.html">Terraform binary</a> file
+  </li>
+</ul>
+<h2 id="examples">examples</h2><!-- -->
+<p>Autoformat <code>staging</code> folder and check for errors.</p>
+<pre>
+terraform fmt staging
+terraform validate staging
+</pre>
+<p>Save an <a href="https://www.terraform.io/docs/commands/plan.html">execution plan</a> for the <code>staging</code> folder, then show the plan in JSON format.</p>
+<pre>
+terraform plan -out myplan staging
+terraform show -json myplan
+</pre>
+<p>Destroy and rebuild <code>some_resource</code> which was declared in the <code>staging</code> folder.</p>
+<pre>
+terraform taint some_resource
+terraform apply staging
+</pre>
+<p>Apply changes to <code>staging</code> folder without being prompted to confirm.</p>
+<pre>
+terraform apply -auto-approve staging
+</pre>
+<h2 id="faq">faq</h2><!-- -->
+<dl>
+  <dt>Where are the official docs?</dt>
+  <dd>
+    <a href="https://www.terraform.io/docs/commands/index.html">Terraform Commands (CLI)</a>
+  </dd>
+</dl>
+</main>
+<section id="icons">
+<a href="mailto:samkennerly@gmail.com"><img alt="Email" src="../media/icons/gmail.svg" height="32" title="Email"></a>
+<a href="https://github.com/samkennerly/"><img alt="GitHub" src="../media/icons/github.svg" height="32" title="GitHub"></a>
+<a href="https://www.linkedin.com/in/samkennerlyphd/"><img alt="LinkedIn" src="../media/icons/linkedin.svg" height="32" title="LinkedIn"></a>
+</section>
+<section id="jump">
+<a href="ruby_rbenv.html" rel="prev">--</a>
+<a href="#" id="updog">return</a>
+<a href="../index.html" rel="next">++</a>
+</section>
+<section id="klf">
+<span id="copyright">© Sam Kennerly 2020.</span>
+<a href="https://creativecommons.org/licenses/by/4.0" rel="license">Licensed under a CC BY 4.0 license.</a>
+<a href="https://quarto.neocities.org/"><br>Built by a Quarto</a>
+<span id="klftext">with icons by <a href="https://simpleicons.org/">Simple Icons</a>.<br></span>
+<address>samkennerly@gmail.com</address>
+</section>
+</body>
+</html>

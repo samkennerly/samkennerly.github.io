@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Sam Kennerly</title>
+<link rel="canonical" href="https://samkennerly.github.io/tldrs/python_pdb.html">
+<link rel="icon" href="../favicon.png">
+<link rel="stylesheet" href="../style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Sam Kennerly">
+<meta name="description" content="Freelance data (analyst, cleaner, engineer, plumber, scientist) in New York City.">
+<meta name="keywords" content="data, docker, jupyter, kdb, python, ruby, science, terraform">
+<meta name="generator" content="https://quarto.neocities.org/">
+</head>
+<body>
+<nav>
+<a href="../index.html" rel="home">index</a>
+<a href="../projects.html">projects</a>
+<a href="../quartos.html">quartos</a>
+<details><summary>random</summary>
+<a href="../random/ssh_keys.html">ssh keys</a>
+</details>
+<details><summary>science</summary>
+<a href="../science/research.html">research</a>
+<a href="../science/slideshows.html">slideshows</a>
+<a href="../science/tutorials.html">tutorials</a>
+</details>
+<details open><summary>tldrs</summary>
+<a href="docker.html">docker</a>
+<a href="#">python pdb</a>
+<a href="q_types.html">q types</a>
+<a href="ruby_bundler.html">ruby bundler</a>
+<a href="ruby_gems.html">ruby gems</a>
+<a href="ruby_rbenv.html">ruby rbenv</a>
+<a href="terraform.html">terraform</a>
+</details>
+</nav>
+<main>
+<h1>python pdb</h1><!-- -->
+<h2 id="abstract">abstract</h2><!-- -->
+<p><a href="https://docs.python.org/3/library/pdb.html">pdb</a> is Python's built-in <a href="https://en.wikipedia.org/wiki/Debugger">debugger</a>.</p>
+<h2 id="basics">basics</h2><!-- -->
+<ul>
+  <li>
+    <code>pdb</code> is a Python <a href="https://docs.python.org/3/tutorial/modules.html">module</a>.
+  </li>
+  <li>
+    <code>python -m pdb</code> runs pdb <a href="https://docs.python.org/3/tutorial/modules.html#executing-modules-as-scripts">like a script</a>.
+  </li>
+  <li><code>python -m pdb myscript.py</code> runs <code>myscript.py</code> and starts pdb.</li>
+  <li>Python's <a href="https://docs.python.org/3/library/functions.html#breakpoint">breakpoint()</a> function interrupts a script (or module) to start pdb.
+  </li>
+</ul>
+<h2 id="commands">commands</h2><!-- -->
+<div>
+  <table>
+    <caption>
+      run code
+    </caption>
+    <tr>
+      <td><code>c</code></td>
+      <td>continue until breakpoint</td>
+    </tr>
+    <tr>
+      <td><code>h</code></td>
+      <td>show help menu</td>
+    </tr>
+    <tr>
+      <td><code>interact</code></td>
+      <td>start interpreter</td>
+    </tr>
+    <tr>
+      <td><code>n</code></td>
+      <td>run until next line</td>
+    </tr>
+    <tr>
+      <td><code>q</code></td>
+      <td>quit debugger</td>
+    </tr>
+    <tr>
+      <td><code>r</code></td>
+      <td>run until function returns</td>
+    </tr>
+    <tr>
+      <td><code>run</code></td>
+      <td>run script again</td>
+    </tr>
+    <tr>
+      <td><code>s</code></td>
+      <td>step inside function</td>
+    </tr>
+    <tr>
+      <td><code>unt 13</code></td>
+      <td>run until line 13</td>
+    </tr>
+    <tr>
+      <td><code>!statement</code></td>
+      <td>execute <code>statement</code></td>
+    </tr>
+  </table>
+</div>
+<div>
+  <table>
+    <caption>
+      show context
+    </caption>
+    <tr>
+      <td><code>args</code></td>
+      <td>arguments for current function</td>
+    </tr>
+    <tr>
+      <td><code>d 5</code></td>
+      <td>down 5 levels in stack trace</td>
+    </tr>
+    <tr>
+      <td><code>l</code></td>
+      <td>list lines near current line</td>
+    </tr>
+    <tr>
+      <td><code>ll</code></td>
+      <td>list lines in current frame</td>
+    </tr>
+    <tr>
+      <td><code>l 13</code></td>
+      <td>list lines near line 13</td>
+    </tr>
+    <tr>
+      <td><code>l 13 20</code></td>
+      <td>list lines from 13 through 20</td>
+    </tr>
+    <tr>
+      <td><code>p x</code></td>
+      <td>print value of <code>x</code></td>
+    </tr>
+    <tr>
+      <td><code>pp x</code></td>
+      <td>pretty-print value of <code>x</code></td>
+    </tr>
+    <tr>
+      <td><code>source x</code></td>
+      <td>source code of <code>x</code></td>
+    </tr>
+    <tr>
+      <td><code>w</code></td>
+      <td>where are we in stack trace?</td>
+    </tr>
+    <tr>
+      <td><code>u 5</code></td>
+      <td>up 5 levels in stack trace</td>
+    </tr>
+  </table>
+</div>
+<div>
+  <table>
+    <caption>
+      set breakpoints
+    </caption>
+    <tr>
+      <td><code>b</code></td>
+      <td>show breakpoints</td>
+    </tr>
+    <tr>
+      <td><code>b 13</code></td>
+      <td>set breakpoint at line 13</td>
+    </tr>
+    <tr>
+      <td><code>b func</code></td>
+      <td>set breakpoint inside <code>func()</code></td>
+    </tr>
+    <tr>
+      <td><code>cl</code></td>
+      <td>clear all breakpoints</td>
+    </tr>
+    <tr>
+      <td><code>cl 3</code></td>
+      <td>clear 3rd breakpoint</td>
+    </tr>
+  </table>
+</div>
+<h2 id="dependencies">dependencies</h2><!-- -->
+<p>pdb is included with Python.</p>
+<h2 id="examples">examples</h2><!-- -->
+<p>Run pdb like a script:</p>
+<pre>
+python -m pdb
+</pre>
+<p>Run <code>path/to/myscript.py</code> and start pdb:</p>
+<pre>
+python -m pdb path/to/myscript.py
+</pre>
+<p>Start pdb from inside a Python interpreter:</p>
+<pre>
+python3
+Python 3.7.0 (default, Aug 17 2018, 21:14:48)
+[Clang 9.1.0 (clang-902.0.39.2)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+&gt;&gt;&gt; breakpoint()
+--Return--
+&gt; &lt;stdin&gt;(1)&lt;module&gt;()-&gt;None
+</pre>
+<h2 id="faq">faq</h2><!-- -->
+<dl>
+  <dt>Where are the official docs?</dt>
+  <dd>
+    pdb <a href="https://docs.python.org/3/library/pdb.html">module docs</a>
+  </dd>
+  <dt>Where can I find other tutorials?</dt>
+  <dd>
+    <a href="https://www.digitalocean.com/community/tutorials/how-to-use-the-python-debugger">DigitalOcean</a> pdb tutorial
+  </dd>
+  <dd>
+    <a href="https://djangostars.com/blog/debugging-python-applications-with-pdb/">Djangostars</a> pdb tutorial
+  </dd>
+</dl>
+</main>
+<section id="icons">
+<a href="mailto:samkennerly@gmail.com"><img alt="Email" src="../media/icons/gmail.svg" height="32" title="Email"></a>
+<a href="https://github.com/samkennerly/"><img alt="GitHub" src="../media/icons/github.svg" height="32" title="GitHub"></a>
+<a href="https://www.linkedin.com/in/samkennerlyphd/"><img alt="LinkedIn" src="../media/icons/linkedin.svg" height="32" title="LinkedIn"></a>
+</section>
+<section id="jump">
+<a href="docker.html" rel="prev">--</a>
+<a href="#" id="updog">return</a>
+<a href="q_types.html" rel="next">++</a>
+</section>
+<section id="klf">
+<span id="copyright">© Sam Kennerly 2020.</span>
+<a href="https://creativecommons.org/licenses/by/4.0" rel="license">Licensed under a CC BY 4.0 license.</a>
+<a href="https://quarto.neocities.org/"><br>Built by a Quarto</a>
+<span id="klftext">with icons by <a href="https://simpleicons.org/">Simple Icons</a>.<br></span>
+<address>samkennerly@gmail.com</address>
+</section>
+</body>
+</html>

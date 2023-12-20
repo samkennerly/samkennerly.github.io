@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Sam Kennerly</title>
+<link rel="canonical" href="https://samkennerly.github.io/tldrs/q_types.html">
+<link rel="icon" href="../favicon.png">
+<link rel="stylesheet" href="../style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Sam Kennerly">
+<meta name="description" content="Freelance data (analyst, cleaner, engineer, plumber, scientist) in New York City.">
+<meta name="keywords" content="data, docker, jupyter, kdb, python, ruby, science, terraform">
+<meta name="generator" content="https://quarto.neocities.org/">
+</head>
+<body>
+<nav>
+<a href="../index.html" rel="home">index</a>
+<a href="../projects.html">projects</a>
+<a href="../quartos.html">quartos</a>
+<details><summary>random</summary>
+<a href="../random/ssh_keys.html">ssh keys</a>
+</details>
+<details><summary>science</summary>
+<a href="../science/research.html">research</a>
+<a href="../science/slideshows.html">slideshows</a>
+<a href="../science/tutorials.html">tutorials</a>
+</details>
+<details open><summary>tldrs</summary>
+<a href="docker.html">docker</a>
+<a href="python_pdb.html">python pdb</a>
+<a href="#">q types</a>
+<a href="ruby_bundler.html">ruby bundler</a>
+<a href="ruby_gems.html">ruby gems</a>
+<a href="ruby_rbenv.html">ruby rbenv</a>
+<a href="terraform.html">terraform</a>
+</details>
+</nav>
+<main>
+<h1>q types</h1><!-- -->
+<h2 id="abstract">abstract</h2><!-- -->
+<p>Data types for the <a href="https://code.kx.com/v2/">q</a> language are listed here.</p>
+<h2 id="basics">basics</h2><!-- -->
+<ul>
+  <li>The <a href="https://code.kx.com/v2/ref/type/">type</a> command returns a <a href="https://code.kx.com/q4m3/2_Basic_Data_Types_Atoms/#212-short-and-int">short int</a> numeric code.
+  </li>
+  <li>Some types also have <a href="https://code.kx.com/q4m3/2_Basic_Data_Types_Atoms/#241-char">char</a> codes, e.g. <code>7h</code> is a short int.
+  </li>
+  <li>
+    <a href="https://code.kx.com/q4m3/2_Basic_Data_Types_Atoms/#20-overview">Atoms</a> have negative codes. <a href="https://code.kx.com/q4m3/3_Lists/">Lists</a> have positive type codes.
+  </li>
+  <li>Short int and char codes can be used to <a href="https://code.kx.com/v2/ref/cast/">cast</a> variables.
+  </li>
+</ul>
+<h2 id="contents">contents</h2><!-- -->
+<div>
+  <table>
+    <caption>
+      q datatypes
+    </caption>
+    <tr>
+      <th>n</th>
+      <th>char</th>
+      <th>name</th>
+      <th>bytes</th>
+      <th>literal</th>
+      <th>null</th>
+      <th>inf</th>
+      <th>SQL</th>
+      <th>Java</th>
+      <th>.Net</th>
+    </tr>
+    <tr>
+      <td>0</td>
+      <td>*</td>
+      <td>list</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>b</td>
+      <td>boolean</td>
+      <td>1</td>
+      <td><code>0b</code></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>Boolean</td>
+      <td>boolean</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>g</td>
+      <td>guid</td>
+      <td>16</td>
+      <td></td>
+      <td><code>0Ng</code></td>
+      <td></td>
+      <td></td>
+      <td>UUID</td>
+      <td>GUID</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>x</td>
+      <td>byte</td>
+      <td>1</td>
+      <td><code>0x00</code></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>Byte</td>
+      <td>byte</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>h</td>
+      <td>short</td>
+      <td>2</td>
+      <td><code>0h</code></td>
+      <td><code>0Nh</code></td>
+      <td><code>0Wh</code></td>
+      <td>smallint</td>
+      <td>Short</td>
+      <td>int16</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>i</td>
+      <td>int</td>
+      <td>4</td>
+      <td><code>0i</code></td>
+      <td><code>0Ni</code></td>
+      <td><code>0Wi</code></td>
+      <td>int</td>
+      <td>Integer</td>
+      <td>int32</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>j</td>
+      <td>long</td>
+      <td>8</td>
+      <td><code>0j</code> or <code>0</code></td>
+      <td><code>0Nj</code><br>
+      or <code>0N</code></td>
+      <td><code>0Wj</code><br>
+      or <code>0W</code></td>
+      <td>bigint</td>
+      <td>Long</td>
+      <td>int64</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>e</td>
+      <td>real</td>
+      <td>4</td>
+      <td><code>0e</code></td>
+      <td><code>0Ne</code></td>
+      <td><code>0We</code></td>
+      <td>real</td>
+      <td>Float</td>
+      <td>single</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>f</td>
+      <td>float</td>
+      <td>8</td>
+      <td><code>0.0</code> or <code>0f</code></td>
+      <td><code>0n</code></td>
+      <td><code>0w</code></td>
+      <td>float</td>
+      <td>Double</td>
+      <td>double</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>c</td>
+      <td>char</td>
+      <td>1</td>
+      <td><code>" "</code></td>
+      <td><code>" "</code></td>
+      <td></td>
+      <td></td>
+      <td>Character</td>
+      <td>char</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>s</td>
+      <td>symbol</td>
+      <td>.</td>
+      <td><code>`</code></td>
+      <td><code>`</code></td>
+      <td></td>
+      <td>varchar</td>
+      <td>String</td>
+      <td>string</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>p</td>
+      <td>timestamp</td>
+      <td>8</td>
+      <td>dateDtimespan</td>
+      <td><code>0Np</code></td>
+      <td><code>0Wp</code></td>
+      <td></td>
+      <td>Timestamp</td>
+      <td>DateTime (read)</td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td>m</td>
+      <td>month</td>
+      <td>4</td>
+      <td><code>2000.01m</code></td>
+      <td><code>0Nm</code></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>14</td>
+      <td>d</td>
+      <td>date</td>
+      <td>4</td>
+      <td><code>2000.01.01</code></td>
+      <td><code>0Nd</code></td>
+      <td><code>0Wd</code></td>
+      <td>date</td>
+      <td>Date</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>15</td>
+      <td>z</td>
+      <td>datetime</td>
+      <td>8</td>
+      <td>dateTtime</td>
+      <td><code>0Nz</code></td>
+      <td><code>0wz</code></td>
+      <td>timestamp</td>
+      <td>Timestamp</td>
+      <td>DateTime (read-only)</td>
+    </tr>
+    <tr>
+      <td>16</td>
+      <td>n</td>
+      <td>timespan</td>
+      <td>8</td>
+      <td><code>00:00:00.000000000</code></td>
+      <td><code>0Nn</code></td>
+      <td><code>0Wn</code></td>
+      <td></td>
+      <td>Timespan</td>
+      <td>TimeSpan</td>
+    </tr>
+    <tr>
+      <td>17</td>
+      <td>u</td>
+      <td>minute</td>
+      <td>4</td>
+      <td><code>00:00</code></td>
+      <td><code>0Nu</code></td>
+      <td><code>0Wu</code></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>18</td>
+      <td>v</td>
+      <td>second</td>
+      <td>4</td>
+      <td><code>00:00:00</code></td>
+      <td><code>0Nv</code></td>
+      <td><code>0Nv</code></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>19</td>
+      <td>t</td>
+      <td>time</td>
+      <td>4</td>
+      <td><code>00:00:00.000</code></td>
+      <td><code>0Nt</code></td>
+      <td><code>0Wt</code></td>
+      <td>time</td>
+      <td>Time</td>
+      <td>TimeSpan</td>
+    </tr>
+    <tr>
+      <td>20-76</td>
+      <td></td>
+      <td>enums</td>
+    </tr>
+    <tr>
+      <td>77</td>
+      <td></td>
+      <td>anymap</td>
+    </tr>
+    <tr>
+      <td>78-96</td>
+      <td></td>
+      <td>mapped list of lists of type<br>
+      <code>(n - 77)</code></td>
+    </tr>
+    <tr>
+      <td>97</td>
+      <td></td>
+      <td>nested sym enum</td>
+    </tr>
+    <tr>
+      <td>98</td>
+      <td></td>
+      <td>table</td>
+    </tr>
+    <tr>
+      <td>99</td>
+      <td></td>
+      <td>dictionary</td>
+    </tr>
+    <tr>
+      <td>100</td>
+      <td></td>
+      <td>lambda</td>
+    </tr>
+    <tr>
+      <td>101</td>
+      <td></td>
+      <td>unary primitive</td>
+    </tr>
+    <tr>
+      <td>102</td>
+      <td></td>
+      <td>operator</td>
+    </tr>
+    <tr>
+      <td>103</td>
+      <td></td>
+      <td>iterator</td>
+    </tr>
+    <tr>
+      <td>104</td>
+      <td></td>
+      <td>projection</td>
+    </tr>
+    <tr>
+      <td>105</td>
+      <td></td>
+      <td>composition</td>
+    </tr>
+    <tr>
+      <td>106</td>
+      <td></td>
+      <td>
+        <code>v'</code> (<a href="https://code.kx.com/v2/ref/maps">each</a>)
+      </td>
+    </tr>
+    <tr>
+      <td>107</td>
+      <td></td>
+      <td>
+        <code>v/</code> (<a href="https://code.kx.com/v2/ref/accumulators">over</a>)
+      </td>
+    </tr>
+    <tr>
+      <td>108</td>
+      <td></td>
+      <td>
+        <code>v\</code> (<a href="https://code.kx.com/v2/ref/accumulators">scan</a>)
+      </td>
+    </tr>
+    <tr>
+      <td>109</td>
+      <td></td>
+      <td>
+        <code>v':</code> (<a href="https://code.kx.com/v2/ref/maps">each prior</a>)
+      </td>
+    </tr>
+    <tr>
+      <td>110</td>
+      <td></td>
+      <td>
+        <code>v/:</code> (<a href="https://code.kx.com/v2/ref/maps">each right</a>)
+      </td>
+    </tr>
+    <tr>
+      <td>111</td>
+      <td></td>
+      <td>
+        <code>v\:</code> (<a href="https://code.kx.com/v2/ref/maps">each left</a>)
+      </td>
+    </tr>
+    <tr>
+      <td>112</td>
+      <td></td>
+      <td>dynamic load</td>
+    </tr>
+  </table>
+</div>
+<h2 id="dependencies">dependencies</h2><!-- -->
+<ul>
+  <li>
+    <a href="https://code.kx.com/v2/">q</a>
+  </li>
+</ul>
+<h2 id="examples">examples</h2><!-- -->
+<p>Atoms have negative types. Lists have positive types.</p>
+<pre>
+q)type 23
+-7h
+q)type enlist 23
+7h
+q)type 1,2,3,4,5
+7h
+q)type (1;2;3;4;5)
+7h
+q)type each 1,2,3,4,5
+-7 -7 -7 -7 -7h
+</pre>
+<p>A <q>string</q> is a list of chars.</p>
+<pre>
+q)type "Hello, World!"
+10h
+</pre>
+<p>Cast a string as a symbol.</p>
+<pre>
+q)` $ "Hello, World!"
+`Hello, World!
+q)-11h $ "Hello, World!"
+`Hello, World!
+</pre>
+<p>Convert a list of symbols to a list of strings.</p>
+<pre>
+q)type `one`two`three`four`five
+11h
+q)type string `one`two`three`four`five
+0h
+q)string `one`two`three`four`five
+"one"
+"two"
+"three"
+"four"
+"five"
+</pre>
+<h2 id="faq">faq</h2><!-- -->
+<dl>
+  <dt>Is there an official version of the table?</dt>
+  <dd>
+    Kx official <a href="https://code.kx.com/v2/ref/#datatypes">datatypes</a>
+  </dd>
+</dl>
+</main>
+<section id="icons">
+<a href="mailto:samkennerly@gmail.com"><img alt="Email" src="../media/icons/gmail.svg" height="32" title="Email"></a>
+<a href="https://github.com/samkennerly/"><img alt="GitHub" src="../media/icons/github.svg" height="32" title="GitHub"></a>
+<a href="https://www.linkedin.com/in/samkennerlyphd/"><img alt="LinkedIn" src="../media/icons/linkedin.svg" height="32" title="LinkedIn"></a>
+</section>
+<section id="jump">
+<a href="python_pdb.html" rel="prev">--</a>
+<a href="#" id="updog">return</a>
+<a href="ruby_bundler.html" rel="next">++</a>
+</section>
+<section id="klf">
+<span id="copyright">© Sam Kennerly 2020.</span>
+<a href="https://creativecommons.org/licenses/by/4.0" rel="license">Licensed under a CC BY 4.0 license.</a>
+<a href="https://quarto.neocities.org/"><br>Built by a Quarto</a>
+<span id="klftext">with icons by <a href="https://simpleicons.org/">Simple Icons</a>.<br></span>
+<address>samkennerly@gmail.com</address>
+</section>
+</body>
+</html>

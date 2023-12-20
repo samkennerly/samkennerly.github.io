@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Sam Kennerly</title>
+<link rel="canonical" href="https://samkennerly.github.io/tldrs/ruby_gems.html">
+<link rel="icon" href="../favicon.png">
+<link rel="stylesheet" href="../style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Sam Kennerly">
+<meta name="description" content="Freelance data (analyst, cleaner, engineer, plumber, scientist) in New York City.">
+<meta name="keywords" content="data, docker, jupyter, kdb, python, ruby, science, terraform">
+<meta name="generator" content="https://quarto.neocities.org/">
+</head>
+<body>
+<nav>
+<a href="../index.html" rel="home">index</a>
+<a href="../projects.html">projects</a>
+<a href="../quartos.html">quartos</a>
+<details><summary>random</summary>
+<a href="../random/ssh_keys.html">ssh keys</a>
+</details>
+<details><summary>science</summary>
+<a href="../science/research.html">research</a>
+<a href="../science/slideshows.html">slideshows</a>
+<a href="../science/tutorials.html">tutorials</a>
+</details>
+<details open><summary>tldrs</summary>
+<a href="docker.html">docker</a>
+<a href="python_pdb.html">python pdb</a>
+<a href="q_types.html">q types</a>
+<a href="ruby_bundler.html">ruby bundler</a>
+<a href="#">ruby gems</a>
+<a href="ruby_rbenv.html">ruby rbenv</a>
+<a href="terraform.html">terraform</a>
+</details>
+</nav>
+<main>
+<h1>ruby gems</h1><!-- -->
+<h2 id="abstract">abstract</h2><!-- -->
+<p><a href="https://guides.rubygems.org/">RubyGems</a> is Ruby's <a href="https://en.wikipedia.org/wiki/Package_manager">package manager</a>.</p>
+<h2 id="basics">basics</h2><!-- -->
+<ul>
+  <li>
+    <a href="https://guides.rubygems.org/what-is-a-gem/">Gems</a> are installable Ruby libraries and/or applications.
+  </li>
+  <li>RubyGems is a program which installs gems and their <a href="https://en.wikipedia.org/wiki/Coupling_(computer_programming)">dependencies</a>.
+  </li>
+  <li>
+    <code>gem</code> is the <a href="https://en.wikipedia.org/wiki/Command-line_interface">shell</a> command which runs RubyGems.
+  </li>
+  <li>RubyGems typically downloads gems from <a href="https://rubygems.org/">rubygems.org</a>.
+  </li>
+  <li>RubyGems can also download gems from private <a href="https://en.wikipedia.org/wiki/Software_repository">repositories</a>.
+  </li>
+</ul>
+<h2 id="commands">commands</h2><!-- -->
+<p>These commmands use <a href="https://ruby.github.io/rake/">rake</a> as an example gem.</p>
+<div>
+  <table>
+    <tr>
+      <td><code>gem env</code></td>
+      <td>show environment</td>
+    </tr>
+    <tr>
+      <td><code>gem install rake</code></td>
+      <td>install the <code>rake</code> gem</td>
+    </tr>
+    <tr>
+      <td><code>gem list --local</code></td>
+      <td>show installed gems</td>
+    </tr>
+    <tr>
+      <td><code>gem search ^rake$</code></td>
+      <td>
+        find gems by <a href="https://en.wikipedia.org/wiki/Regular_expression">regex</a>
+      </td>
+    </tr>
+    <tr>
+      <td><code>gem uninstall rake</code></td>
+      <td>remove the <code>rake</code> gem</td>
+    </tr>
+    <tr>
+      <td><code>gem update --system</code></td>
+      <td>update RubyGems itself</td>
+    </tr>
+    <tr>
+      <td><code>gem which rake</code></td>
+      <td>show path where the <code>rake</code> gem is installed</td>
+    </tr>
+  </table>
+</div>
+<h2 id="dependencies">dependencies</h2><!-- -->
+<p>RubyGems is included with Ruby 1.9+.</p>
+<h2 id="examples">examples</h2><!-- -->
+<p>Install a specific version of <a href="https://ruby.github.io/rake/">rake</a> :</p>
+<pre>
+gem install rake:13.3.2
+</pre>
+<p>Use a <a href="https://en.wikipedia.org/wiki/Regular_expression">regex</a> to find gems whose names start with <code>rake</code>:</p>
+<pre>
+gem search ^rake
+</pre>
+<h2 id="faq">faq</h2><!-- -->
+<dl>
+  <dt>Where are the official docs?</dt>
+  <dd>
+    RubyGems <a href="https://guides.rubygems.org/">guides</a>
+  </dd>
+  <dd>
+    <code>gem install</code> <a href="https://guides.rubygems.org/command-reference/#gem-install">reference</a>
+  </dd>
+</dl>
+</main>
+<section id="icons">
+<a href="mailto:samkennerly@gmail.com"><img alt="Email" src="../media/icons/gmail.svg" height="32" title="Email"></a>
+<a href="https://github.com/samkennerly/"><img alt="GitHub" src="../media/icons/github.svg" height="32" title="GitHub"></a>
+<a href="https://www.linkedin.com/in/samkennerlyphd/"><img alt="LinkedIn" src="../media/icons/linkedin.svg" height="32" title="LinkedIn"></a>
+</section>
+<section id="jump">
+<a href="ruby_bundler.html" rel="prev">--</a>
+<a href="#" id="updog">return</a>
+<a href="ruby_rbenv.html" rel="next">++</a>
+</section>
+<section id="klf">
+<span id="copyright">© Sam Kennerly 2020.</span>
+<a href="https://creativecommons.org/licenses/by/4.0" rel="license">Licensed under a CC BY 4.0 license.</a>
+<a href="https://quarto.neocities.org/"><br>Built by a Quarto</a>
+<span id="klftext">with icons by <a href="https://simpleicons.org/">Simple Icons</a>.<br></span>
+<address>samkennerly@gmail.com</address>
+</section>
+</body>
+</html>

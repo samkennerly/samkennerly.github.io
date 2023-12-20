@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Sam Kennerly</title>
+<link rel="canonical" href="https://samkennerly.github.io/tldrs/docker.html">
+<link rel="icon" href="../favicon.png">
+<link rel="stylesheet" href="../style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Sam Kennerly">
+<meta name="description" content="Freelance data (analyst, cleaner, engineer, plumber, scientist) in New York City.">
+<meta name="keywords" content="data, docker, jupyter, kdb, python, ruby, science, terraform">
+<meta name="generator" content="https://quarto.neocities.org/">
+</head>
+<body>
+<nav>
+<a href="../index.html" rel="home">index</a>
+<a href="../projects.html">projects</a>
+<a href="../quartos.html">quartos</a>
+<details><summary>random</summary>
+<a href="../random/ssh_keys.html">ssh keys</a>
+</details>
+<details><summary>science</summary>
+<a href="../science/research.html">research</a>
+<a href="../science/slideshows.html">slideshows</a>
+<a href="../science/tutorials.html">tutorials</a>
+</details>
+<details open><summary>tldrs</summary>
+<a href="#">docker</a>
+<a href="python_pdb.html">python pdb</a>
+<a href="q_types.html">q types</a>
+<a href="ruby_bundler.html">ruby bundler</a>
+<a href="ruby_gems.html">ruby gems</a>
+<a href="ruby_rbenv.html">ruby rbenv</a>
+<a href="terraform.html">terraform</a>
+</details>
+</nav>
+<main>
+<h1>docker</h1><!-- -->
+<h2 id="abstract">abstract</h2><!-- -->
+<p><a href="https://www.docker.com/">Docker</a> is a software platform which builds and runs <a href="https://en.wikipedia.org/wiki/OS-level_virtualization">containers</a>. Containers can simulate other computers with different software installed. Development containers can help increase <a href="https://en.wikipedia.org/wiki/Reproducible_builds">reproducibility</a> and decrease <a href="https://en.wikipedia.org/wiki/Coupling_(computer_programming)">coupling</a>.</p>
+<h2 id="basics">basics</h2><!-- -->
+<ul>
+  <li>A <dfn>host machine</dfn> is a computer which can run containers.</li>
+  <li>A <dfn>container</dfn> acts like a simulated computer with its own OS and filesystem.</li>
+  <li>An <dfn>image</dfn> uses the host's filesystem to store files needed to run a container.</li>
+  <li>A <a href="https://docs.docker.com/engine/reference/builder/">Dockerfile</a> is a text file which tells Docker how to build a custom image.
+  </li>
+  <li>A <a href="https://docs.docker.com/storage/volumes/">volume</a> stores files which can be accessed by one or more containers.
+  </li>
+  <li>Host files must be copied or <a href="https://docs.docker.com/storage/bind-mounts/">mounted</a> before a container can access them.
+  </li>
+  <li>Containers on the same host use <a href="https://docs.docker.com/network/">networks</a> to communicate with each other.
+  </li>
+  <li>The Docker <a href="https://en.wikipedia.org/wiki/Daemon_(computing)">daemon</a> manages containers, images, volumes, and networks.
+  </li>
+</ul>
+<h2 id="commands">commands</h2><!-- -->
+<div>
+  <table>
+    <tr>
+      <td><code>docker build myimage .</code></td>
+      <td>build <code>myimage</code> from a <code>Dockerfile</code> in the current folder</td>
+    </tr>
+    <tr>
+      <td><code>docker image ls</code></td>
+      <td>show all images</td>
+    </tr>
+    <tr>
+      <td><code>docker image rm myimage</code></td>
+      <td>delete <code>myimage</code></td>
+    </tr>
+    <tr>
+      <td><code>docker network ls</code></td>
+      <td>show all networks</td>
+    </tr>
+    <tr>
+      <td><code>docker ps --all</code></td>
+      <td>show all containers</td>
+    </tr>
+    <tr>
+      <td><code>docker run myimage</code></td>
+      <td>run a container from <code>myimage</code></td>
+    </tr>
+    <tr>
+      <td><code>docker run myimage ls -la</code></td>
+      <td>run <code>ls -la</code> in a container from <code>myimage</code></td>
+    </tr>
+    <tr>
+      <td><code>docker system prune</code></td>
+      <td>delete unused docker objects</td>
+    </tr>
+    <tr>
+      <td><code>docker volume ls</code></td>
+      <td>show all volumes</td>
+    </tr>
+  </table>
+</div>
+<h2 id="dependencies">dependencies</h2><!-- -->
+<ul>
+  <li>
+    <a href="https://docs.docker.com/install/">Docker Engine</a> or
+  </li>
+  <li>
+    <a href="https://docs.docker.com/docker-for-mac/install/">Docker for Mac</a> or
+  </li>
+  <li>
+    <a href="https://docs.docker.com/docker-for-windows/">Docker for Windows</a>
+  </li>
+</ul>
+<h2 id="examples">examples</h2><!-- -->
+<p>Build an image named <code>myimage:v2</code> from a <code>Dockerfile</code> in <code>some/folder</code>:</p>
+<pre>
+docker build --tag myimage:v2 some/folder
+</pre>
+<p>Run <code>bash</code> interactively in a self-destructing container from the <code>myimage:v2</code> image:</p>
+<pre>
+docker run --rm --interactive --tty myimage:v2 bash
+</pre>
+<p>Run the default <code>myimage:v2</code> command with the current folder mounted read-only as <code>/context</code>:</p>
+<pre>
+docker run --volume "$(pwd):/context:ro" myimage:v2
+</pre>
+<p>Delete the <code>myimage:v2</code> image and any containers using it:</p>
+<pre>
+docker ps --quiet --filter ancestor="myimage:v2" | xargs docker rm --force
+docker image rm myimage:v2 --force
+</pre>
+<p>Stop all containers, then delete stopped containers and unused objects:</p>
+<pre>
+docker ps --quiet | xargs docker kill
+docker system prune --force
+</pre>
+<h2 id="faq">faq</h2><!-- -->
+<dl>
+  <dt>Where is the official documentation?</dt>
+  <dd>
+    Docker <a href="https://docs.docker.com/">docs</a>
+  </dd>
+  <dd>
+    <code>Dockerfile</code> <a href="https://docs.docker.com/engine/reference/builder/">reference</a>
+  </dd>
+  <dd>
+    <code>docker run</code> <a href="https://docs.docker.com/engine/reference/run/">reference</a>
+  </dd>
+  <dt>Do containers always run as root?</dt>
+  <dd>
+    No. Add a <a href="https://docs.docker.com/engine/reference/builder/#user">USER</a> in a <code>Dockerfile</code> or call <code>docker run</code> with the <a href="https://docs.docker.com/engine/reference/run/#user">--user</a> option.
+  </dd>
+  <dt>Can I run a container in a container?</dt>
+  <dd><img alt="squint" src="../media/tldrs/squint.jpg"></dd>
+</dl>
+</main>
+<section id="icons">
+<a href="mailto:samkennerly@gmail.com"><img alt="Email" src="../media/icons/gmail.svg" height="32" title="Email"></a>
+<a href="https://github.com/samkennerly/"><img alt="GitHub" src="../media/icons/github.svg" height="32" title="GitHub"></a>
+<a href="https://www.linkedin.com/in/samkennerlyphd/"><img alt="LinkedIn" src="../media/icons/linkedin.svg" height="32" title="LinkedIn"></a>
+</section>
+<section id="jump">
+<a href="../science/tutorials.html" rel="prev">--</a>
+<a href="#" id="updog">return</a>
+<a href="python_pdb.html" rel="next">++</a>
+</section>
+<section id="klf">
+<span id="copyright">© Sam Kennerly 2020.</span>
+<a href="https://creativecommons.org/licenses/by/4.0" rel="license">Licensed under a CC BY 4.0 license.</a>
+<a href="https://quarto.neocities.org/"><br>Built by a Quarto</a>
+<span id="klftext">with icons by <a href="https://simpleicons.org/">Simple Icons</a>.<br></span>
+<address>samkennerly@gmail.com</address>
+</section>
+</body>
+</html>

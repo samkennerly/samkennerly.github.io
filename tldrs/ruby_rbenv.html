@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Sam Kennerly</title>
+<link rel="canonical" href="https://samkennerly.github.io/tldrs/ruby_rbenv.html">
+<link rel="icon" href="../favicon.png">
+<link rel="stylesheet" href="../style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Sam Kennerly">
+<meta name="description" content="Freelance data (analyst, cleaner, engineer, plumber, scientist) in New York City.">
+<meta name="keywords" content="data, docker, jupyter, kdb, python, ruby, science, terraform">
+<meta name="generator" content="https://quarto.neocities.org/">
+</head>
+<body>
+<nav>
+<a href="../index.html" rel="home">index</a>
+<a href="../projects.html">projects</a>
+<a href="../quartos.html">quartos</a>
+<details><summary>random</summary>
+<a href="../random/ssh_keys.html">ssh keys</a>
+</details>
+<details><summary>science</summary>
+<a href="../science/research.html">research</a>
+<a href="../science/slideshows.html">slideshows</a>
+<a href="../science/tutorials.html">tutorials</a>
+</details>
+<details open><summary>tldrs</summary>
+<a href="docker.html">docker</a>
+<a href="python_pdb.html">python pdb</a>
+<a href="q_types.html">q types</a>
+<a href="ruby_bundler.html">ruby bundler</a>
+<a href="ruby_gems.html">ruby gems</a>
+<a href="#">ruby rbenv</a>
+<a href="terraform.html">terraform</a>
+</details>
+</nav>
+<main>
+<h1>ruby rbenv</h1><!-- -->
+<h2 id="abstract">abstract</h2><!-- -->
+<p><a href="https://github.com/rbenv/rbenv">rbenv</a> and <a href="https://github.com/rbenv/ruby-build">ruby-build</a> are <a href="https://en.wikipedia.org/wiki/Bash_(Unix_shell)">shell scripts</a> which install and manage Ruby versions.</p>
+<h2 id="basics">basics</h2><!-- -->
+<ul>
+  <li>The <code>~/.rbenv/versions</code> folder contains installed Ruby versions.</li>
+  <li>The <code>~/.rbenv/version</code> file sets <a href="https://github.com/rbenv/rbenv#rbenv-global">global Ruby</a> for a user.
+  </li>
+  <li>The <code>~/.rbenv/shims</code> folder contains <a href="https://github.com/rbenv/rbenv#understanding-shims">shim executables</a>.
+  </li>
+  <li>Any <code>.ruby-version</code> file sets <a href="https://github.com/rbenv/rbenv#rbenv-local">local Ruby</a> for a folder and its descendents.
+  </li>
+  <li>Any <code>RBENV_VERSION</code> <a href="https://en.wikipedia.org/wiki/Environment_variable">environment variable</a> overrules global and local Ruby.
+  </li>
+</ul>
+<h2 id="commands">commands</h2><!-- -->
+<div>
+  <table>
+    <caption>
+      setup
+    </caption>
+    <tr>
+      <td><code>brew install rbenv</code></td>
+      <td>
+        install rbenv with <a href="https://brew.sh/">Homebrew</a>
+      </td>
+    </tr>
+    <tr>
+      <td><code>brew uninstall rbenv</code></td>
+      <td>
+        uninstall rbenv with <a href="https://brew.sh/">Homebrew</a>
+      </td>
+    </tr>
+    <tr>
+      <td><code>brew upgrade rbenv ruby-build</code></td>
+      <td>
+        upgrade rbenv with <a href="https://brew.sh/">Homebrew</a>
+      </td>
+    </tr>
+    <tr>
+      <td><code>eval "$(rbenv init -)"</code></td>
+      <td>
+        <a href="https://github.com/rbenv/rbenv#how-rbenv-hooks-into-your-shell">modify shell</a> to use rbenv
+      </td>
+    </tr>
+  </table>
+</div>
+<div>
+  <table>
+    <caption>
+      usage
+    </caption>
+    <tr>
+      <td><code>rbenv install 2.6.3</code></td>
+      <td>install Ruby version 2.6.3</td>
+    </tr>
+    <tr>
+      <td><code>rbenv install --list</code></td>
+      <td>show available Rubies</td>
+    </tr>
+    <tr>
+      <td><code>rbenv shell 2.6.3</code></td>
+      <td>use Ruby version 2.6.3</td>
+    </tr>
+    <tr>
+      <td><code>rbenv shell --unset</code></td>
+      <td>revert to using default Ruby</td>
+    </tr>
+    <tr>
+      <td><code>rbenv uninstall 2.6.3</code></td>
+      <td>remove Ruby version 2.6.3</td>
+    </tr>
+    <tr>
+      <td><code>rbenv versions</code></td>
+      <td>show installed Rubies</td>
+    </tr>
+  </table>
+</div>
+<h2 id="dependencies">dependencies</h2><!-- -->
+<ul>
+  <li>
+    <a href="https://rvm.io/">RVM</a> must <strong>not</strong> be installed.
+  </li>
+</ul>
+<h2 id="examples">examples</h2><!-- -->
+<p>Set local Ruby for a project:</p>
+<pre>
+cd path/to/myproject
+echo '2.6.3' &gt; .ruby-version
+rbenv install --skip-existing 2.6.3
+</pre>
+<p>See <a href="https://github.com/rbenv/rbenv#installing-ruby-versions">Installing Ruby versions</a> for details.</p>
+<h2 id="faq">faq</h2><!-- -->
+<dl>
+  <dt>Where are the official docs?</dt>
+  <dd>
+    rbenv <a href="https://github.com/rbenv/rbenv#installation">installation</a>
+  </dd>
+  <dd>
+    rbenv <a href="https://github.com/rbenv/rbenv#command-reference">commands</a>
+  </dd>
+  <dd>
+    rbenv <a href="https://github.com/rbenv/rbenv#how-it-works">explanation</a>
+  </dd>
+</dl>
+</main>
+<section id="icons">
+<a href="mailto:samkennerly@gmail.com"><img alt="Email" src="../media/icons/gmail.svg" height="32" title="Email"></a>
+<a href="https://github.com/samkennerly/"><img alt="GitHub" src="../media/icons/github.svg" height="32" title="GitHub"></a>
+<a href="https://www.linkedin.com/in/samkennerlyphd/"><img alt="LinkedIn" src="../media/icons/linkedin.svg" height="32" title="LinkedIn"></a>
+</section>
+<section id="jump">
+<a href="ruby_gems.html" rel="prev">--</a>
+<a href="#" id="updog">return</a>
+<a href="terraform.html" rel="next">++</a>
+</section>
+<section id="klf">
+<span id="copyright">© Sam Kennerly 2020.</span>
+<a href="https://creativecommons.org/licenses/by/4.0" rel="license">Licensed under a CC BY 4.0 license.</a>
+<a href="https://quarto.neocities.org/"><br>Built by a Quarto</a>
+<span id="klftext">with icons by <a href="https://simpleicons.org/">Simple Icons</a>.<br></span>
+<address>samkennerly@gmail.com</address>
+</section>
+</body>
+</html>

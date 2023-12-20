@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Sam Kennerly</title>
+<link rel="canonical" href="https://samkennerly.github.io/index.html">
+<link rel="icon" href="favicon.png">
+<link rel="stylesheet" href="style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Sam Kennerly">
+<meta name="description" content="Freelance data (analyst, cleaner, engineer, plumber, scientist) in New York City.">
+<meta name="keywords" content="data, docker, jupyter, kdb, python, ruby, science, terraform">
+<meta name="generator" content="https://quarto.neocities.org/">
+</head>
+<body>
+<nav>
+<a href="#" rel="home">index</a>
+<a href="projects.html">projects</a>
+<a href="quartos.html">quartos</a>
+<details><summary>random</summary>
+<a href="random/ssh_keys.html">ssh keys</a>
+</details>
+<details><summary>science</summary>
+<a href="science/research.html">research</a>
+<a href="science/slideshows.html">slideshows</a>
+<a href="science/tutorials.html">tutorials</a>
+</details>
+<details><summary>tldrs</summary>
+<a href="tldrs/docker.html">docker</a>
+<a href="tldrs/python_pdb.html">python pdb</a>
+<a href="tldrs/q_types.html">q types</a>
+<a href="tldrs/ruby_bundler.html">ruby bundler</a>
+<a href="tldrs/ruby_gems.html">ruby gems</a>
+<a href="tldrs/ruby_rbenv.html">ruby rbenv</a>
+<a href="tldrs/terraform.html">terraform</a>
+</details>
+</nav>
+<main>
+<p><dfn>Sam Kennerly</dfn> is a data <select autofocus="" id="role">
+  <option selected>
+    *
+  </option>
+  <option>
+    analyst
+  </option>
+  <option>
+    cleaner
+  </option>
+  <option>
+    engineer
+  </option>
+  <option>
+    plumber
+  </option>
+  <option>
+    scientist
+  </option>
+</select> in New York City.</p>
+<blockquote id="*">
+  Sorry, but can you be direct? I don't know what you want me to do. <cite><a href="https://www.youtube.com/watch?v=BRcOpKCkTWA#t=01m26s">Kimi Räikkönen</a></cite>
+</blockquote>
+<blockquote id="analyst">
+  Far from being a lesser version of the other data science breeds, good analysts are a prerequisite for effectiveness in your data endeavors. It's dangerous to have them quit on you, but that's exactly what they'll do if you under-appreciate them. <cite><a href="https://hbr.org/2018/12/what-great-data-analysts-do-and-why-every-organization-needs-them">Cassie Kozyrkov</a></cite>
+</blockquote>
+<blockquote id="cleaner">
+  Everyone thinks they're going to be doing machine learning, deep learning, and Bayesian simulations... The reality is that "data science" has never been as much about machine learning as it has about cleaning, shaping data, and moving it from place to place. <cite><a href="http://veekaybee.github.io/2019/02/13/data-science-is-different/">Vicki Boykis</a></cite>
+</blockquote>
+<blockquote id="engineer">
+  The world would be a better place if more engineers, like me, hated technology. The stuff I design, if I'm successful, nobody will ever notice. Things will just work, and be self-managing. <cite><a href="https://www.itworld.com/article/2743693/why-ieee-fellow-radia-perlman-hates-technology.html">Radia Perlman</a></cite>
+</blockquote>
+<blockquote id="plumber">
+  The society which scorns excellence in plumbing because plumbing is a humble activity and tolerates shoddiness in philosophy because it is an exalted activity will have neither good plumbing nor good philosophy. Neither its pipes nor its theories will hold water. <cite><a href="https://archive.org/stream/excellencecanweb00ingard/excellencecanweb00ingard_djvu.txt">John W. Gardner</a></cite>
+</blockquote>
+<blockquote id="scientist">
+  You hired a data scientist to work on machine learning. They've been warned about spending 80% of their time cleaning data. That sounds like a distant dream now. Instead, they spend 80% of their time begging for data to be created, accessed, moved, or explained. They're spending the other 20% lobbying for data science-friendly tools, security policies, and infrastructure, or looking for a new job. <cite><a href="https://hackernoon.com/how-not-to-hire-your-first-data-scientist-34f0f56f81ae">Monica Rogati</a></cite>
+</blockquote>
+<dl>
+  <dt>
+    <a href="projects.html">projects</a>
+  </dt>
+  <dd>Public GitHub repositories.</dd>
+  <dt>
+    <a href="quartos.html">quartos</a>
+  </dt>
+  <dd>
+    Websites built by a <a href="https://quarto.neocities.org/">quarto</a>.
+  </dd>
+  <dt><button onclick="openBox('random')">random</button></dt>
+  <dd>Editorial and/or tutorial articles.</dd>
+  <dt><button onclick="openBox('science')">science</button></dt>
+  <dd>Scientific research papers and talks.</dd>
+  <dt><button onclick="openBox('tldrs')">tldrs</button></dt>
+  <dd>
+    Quick-reference guides inspired by <a href="https://tldr.sh/">TLDR pages</a>.
+  </dd>
+</dl>
+<script>
+
+// Toggle details boxes open/shut
+var boxes = Array.from(document.querySelectorAll('nav details summary'))
+function openBox(label) {
+  box = boxes.find(x => x.innerText.toLowerCase() == label)
+  box.parentElement.open = !box.parentElement.open;
+}
+
+// Show one quote, hide the others
+var quotes = document.getElementsByTagName('blockquote');
+var role = document.getElementById('role');
+function showQuote() {
+  for (let quote of quotes) {
+    quote.style.display = (quote.id == role.value) ? 'block' : 'none';
+  };
+}
+role.addEventListener("change",showQuote)
+window.addEventListener("load",showQuote)
+</script>
+</main>
+<section id="icons">
+<a href="mailto:samkennerly@gmail.com"><img alt="Email" src="media/icons/gmail.svg" height="32" title="Email"></a>
+<a href="https://github.com/samkennerly/"><img alt="GitHub" src="media/icons/github.svg" height="32" title="GitHub"></a>
+<a href="https://www.linkedin.com/in/samkennerlyphd/"><img alt="LinkedIn" src="media/icons/linkedin.svg" height="32" title="LinkedIn"></a>
+</section>
+<section id="jump">
+<a href="tldrs/terraform.html" rel="prev">--</a>
+<a href="#" id="updog">return</a>
+<a href="projects.html" rel="next">++</a>
+</section>
+<section id="klf">
+<span id="copyright">© Sam Kennerly 2020.</span>
+<a href="https://creativecommons.org/licenses/by/4.0" rel="license">Licensed under a CC BY 4.0 license.</a>
+<a href="https://quarto.neocities.org/"><br>Built by a Quarto</a>
+<span id="klftext">with icons by <a href="https://simpleicons.org/">Simple Icons</a>.<br></span>
+<address>samkennerly@gmail.com</address>
+</section>
+</body>
+</html>

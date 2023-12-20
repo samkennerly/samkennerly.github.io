@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Sam Kennerly / projects</title>
+<link rel="canonical" href="https://samkennerly.github.io/projects.html">
+<link rel="icon" href="favicon.png">
+<link rel="stylesheet" href="style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Sam Kennerly">
+<meta name="description" content="Public GitHub repositories.">
+<meta name="keywords" content="data, docker, jupyter, kdb, python, ruby, science, terraform">
+<meta name="generator" content="https://quarto.neocities.org/">
+</head>
+<body>
+<nav>
+<a href="index.html" rel="home">index</a>
+<a href="#">projects</a>
+<a href="quartos.html">quartos</a>
+<details><summary>random</summary>
+<a href="random/ssh_keys.html">ssh keys</a>
+</details>
+<details><summary>science</summary>
+<a href="science/research.html">research</a>
+<a href="science/slideshows.html">slideshows</a>
+<a href="science/tutorials.html">tutorials</a>
+</details>
+<details><summary>tldrs</summary>
+<a href="tldrs/docker.html">docker</a>
+<a href="tldrs/python_pdb.html">python pdb</a>
+<a href="tldrs/q_types.html">q types</a>
+<a href="tldrs/ruby_bundler.html">ruby bundler</a>
+<a href="tldrs/ruby_gems.html">ruby gems</a>
+<a href="tldrs/ruby_rbenv.html">ruby rbenv</a>
+<a href="tldrs/terraform.html">terraform</a>
+</details>
+</nav>
+<main>
+<h1>projects</h1><!-- -->
+Some of my public software projects are listed here. For <a href="https://www.urbandictionary.com/define.php?term=Deep%20Cut">deep cuts</a>, see <a href="https://github.com/samkennerly/">github.com/samkennerly</a>.
+<h2>aws</h2><!-- -->
+<dl>
+  <dt>
+    <a href="https://github.com/samkennerly/ec2box/">ec2box</a>
+  </dt>
+  <dd>
+    Example <a href="https://www.terraform.io/">Terraform</a> module for provisioning <a href="https://aws.amazon.com/ec2/">AWS EC2 instances</a>.
+  </dd>
+  <dd>
+    Each box includes its own <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">keypair</a>, <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-security-groups.html">security group</a>, <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatchLogsConcepts.html">CloudWatch log group</a>, <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM role</a>, and <a href="https://cloudinit.readthedocs.io/en/latest/">cloud-init</a> template.
+  </dd>
+</dl>
+<h2>docker</h2><!-- -->
+<dl>
+  <dt>
+    <a href="https://github.com/samkennerly/dockerbash/">dockerbash</a>
+  </dt>
+  <dd>
+    Short <a href="https://en.wikipedia.org/wiki/Shell_script">shell scripts</a> for long Docker commands.
+  </dd>
+  <dd>Never type <code>docker ps -qf ancestor="myimage" | xargs docker rm -f</code> again.</dd>
+</dl>
+<h2>python</h2><!-- -->
+<dl>
+  <dt>
+    <a href="https://github.com/samkennerly/blackbox/">blackbox</a>
+  </dt>
+  <dd>
+    Run <a href="https://black.readthedocs.io/en/stable/">Black</a> (the uncompromising Python code formatter) in a <a href="https://www.docker.com/resources/what-container">Docker container</a>.
+  </dd>
+  <dd>
+    All code is in one <a href="https://en.wikipedia.org/wiki/Shell_script">shell script</a>, including a <code>Dockerfile</code> <a href="http://tldp.org/LDP/abs/html/here-docs.html">heredoc</a>.
+  </dd>
+  <dt>
+    <a href="https://github.com/samkennerly/brundling/">brundling</a>
+  </dt>
+  <dd>
+    Calculations and plots for the <a href="https://brundling.neocities.org/">7 Degrees of Martin Brundle</a>.
+  </dd>
+  <dd>
+    An exhibition of <a href="https://en.wikipedia.org/wiki/Lightweight_software">lightweight</a> data analysis and <a href="https://en.wikipedia.org/wiki/Graph_drawing">graph layout</a> with <a href="https://pandas.pydata.org/">pandas</a>.
+  </dd>
+  <dt>
+    <a href="https://github.com/samkennerly/fountain/">fountain</a>
+  </dt>
+  <dd>
+    Infinite <a href="https://en.wikipedia.org/wiki/Fizz_buzz">FizzBuzz</a> generator. A harmless toy.
+  </dd>
+  <dd>
+    Includes examples of <a href="https://docs.python.org/3/library/doctest.html">doctest</a>, <a href="https://docs.python.org/3/howto/functional.html#generator-expressions-and-list-comprehensions">generators</a>, and <a href="https://docs.python.org/3/library/itertools.html">itertools</a>.
+  </dd>
+  <dt>
+    <a href="https://github.com/samkennerly/kingofsnake/">kingofsnake</a>
+  </dt>
+  <dd>
+    Run <a href="https://jupyter.org/">Jupyter</a> in a <a href="http://blog.kaggle.com/2016/02/05/how-to-get-started-with-data-science-in-containers/">container</a>. Includes example notebooks.
+  </dd>
+  <dd>
+    Ensure people can <a href="https://en.wikipedia.org/wiki/Replication_crisis">replicate</a> your studies with identical software.
+  </dd>
+  <dt>
+    <a href="http://github.com/samkennerly/pydiner/">pydiner</a>
+  </dt>
+  <dd>
+    <a href="https://help.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template">Template</a> for a Python project which builds its own <a href="https://www.docker.com/resources/what-container">containers</a>.
+  </dd>
+  <dd>
+    Spend less time naming things and <a href="https://stackoverflow.com/questions/14132789/relative-imports-for-the-billionth-time">fixing <code>import</code> errors.</a>
+  </dd>
+  <dt>
+    <a href="http://github.com/samkennerly/quarto/">quarto</a>
+  </dt>
+  <dd>Build websites with Python 3. No installation required.</dd>
+  <dd>
+    Made by a simple script, free of state and frameworks, <a href="https://pip.pypa.io/en/stable/user_guide/#requirements-files">pip requiring</a> nothing.
+  </dd>
+</dl>
+<h2>q / kdb+</h2><!-- -->
+<dl>
+  <dt>
+    <a href="https://github.com/samkennerly/q_practice/">q_practice</a>
+  </dt>
+  <dd>
+    Introduction to <a href="https://kx.com/connect-with-us/download/">Q</a>, the scripting language for <a href="https://en.wikipedia.org/wiki/Kdb%2B">KDB+</a> databases.
+  </dd>
+  <dd>Dicts, dots, iterators, lambdas, projections, and a <code>flip enlist system "v"</code>.</dd>
+</dl>
+<h2>ruby</h2><!-- -->
+<dl>
+  <dt>
+    <a href="https://github.com/samkennerly/assimilate/">assimilate</a>
+  </dt>
+  <dd>Force a new Mac to comply with my preferences.</dd>
+  <dd>
+    <a href="https://brew.sh/">Brew</a> apps, <a href="https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository">clone</a> repos, set <a href="https://developer.apple.com/documentation/foundation/nsuserdefaults">defaults</a>, and create <a href="https://en.wikipedia.org/wiki/Symbolic_link">symlinks</a> to <a href="https://dotfiles.github.io/">dotfiles</a>.
+  </dd>
+  <dt>
+    <a href="https://github.com/samkennerly/jekyllbox/">jekyllbox</a>
+  </dt>
+  <dd>
+    Run <a href="https://jekyllrb.com/">Jekyll</a> in a <a href="https://www.docker.com/resources/what-container">Docker container</a>.
+  </dd>
+  <dd>
+    Build <a href="https://en.wikipedia.org/wiki/Static_web_page">static websites</a> without installing a <a href="https://medium.com/windmill-engineering/how-i-built-a-simple-static-jekyll-site-without-installing-ruby-a-rant-b7e87fb123d0">Ruby developer environment</a>.
+  </dd>
+</dl>
+</main>
+<section id="icons">
+<a href="mailto:samkennerly@gmail.com"><img alt="Email" src="media/icons/gmail.svg" height="32" title="Email"></a>
+<a href="https://github.com/samkennerly/"><img alt="GitHub" src="media/icons/github.svg" height="32" title="GitHub"></a>
+<a href="https://www.linkedin.com/in/samkennerlyphd/"><img alt="LinkedIn" src="media/icons/linkedin.svg" height="32" title="LinkedIn"></a>
+</section>
+<section id="jump">
+<a href="index.html" rel="prev">--</a>
+<a href="#" id="updog">return</a>
+<a href="quartos.html" rel="next">++</a>
+</section>
+<section id="klf">
+<span id="copyright">© Sam Kennerly 2020.</span>
+<a href="https://creativecommons.org/licenses/by/4.0" rel="license">Licensed under a CC BY 4.0 license.</a>
+<a href="https://quarto.neocities.org/"><br>Built by a Quarto</a>
+<span id="klftext">with icons by <a href="https://simpleicons.org/">Simple Icons</a>.<br></span>
+<address>samkennerly@gmail.com</address>
+</section>
+</body>
+</html>

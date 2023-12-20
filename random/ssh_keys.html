@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Sam Kennerly / random / ssh_keys</title>
+<link rel="canonical" href="https://samkennerly.github.io/random/ssh_keys.html">
+<link rel="icon" href="../favicon.png">
+<link rel="stylesheet" href="../style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Sam Kennerly">
+<meta name="description" content="SSH keys: how do they work?">
+<meta name="keywords" content="data, docker, jupyter, kdb, python, ruby, science, terraform">
+<meta name="generator" content="https://quarto.neocities.org/">
+</head>
+<body>
+<nav>
+<a href="../index.html" rel="home">index</a>
+<a href="../projects.html">projects</a>
+<a href="../quartos.html">quartos</a>
+<details open><summary>random</summary>
+<a href="#">ssh keys</a>
+</details>
+<details><summary>science</summary>
+<a href="../science/research.html">research</a>
+<a href="../science/slideshows.html">slideshows</a>
+<a href="../science/tutorials.html">tutorials</a>
+</details>
+<details><summary>tldrs</summary>
+<a href="../tldrs/docker.html">docker</a>
+<a href="../tldrs/python_pdb.html">python pdb</a>
+<a href="../tldrs/q_types.html">q types</a>
+<a href="../tldrs/ruby_bundler.html">ruby bundler</a>
+<a href="../tldrs/ruby_gems.html">ruby gems</a>
+<a href="../tldrs/ruby_rbenv.html">ruby rbenv</a>
+<a href="../tldrs/terraform.html">terraform</a>
+</details>
+</nav>
+<main>
+<h1>SSH keys: how do they work?</h1><!-- -->
+<ol start="0">
+  <li>
+    <a href="#what_is_ssh">What is SSH?</a>
+  </li>
+  <li>
+    <a href="#what_does_ssh_do">What does SSH do?</a>
+  </li>
+  <li>
+    <a href="#how_do_i_use_openssh">How do I use OpenSSH?</a>
+  </li>
+</ol>
+<h2 id="what_is_ssh">What is SSH?</h2><!-- -->
+<p>Several related things are named <dfn>SSH</dfn>:</p>
+<ul>
+  <li>
+    <a href="https://www.ssh.com/ssh/protocol">Secure Shell</a> is a networking protocol.
+  </li>
+  <li>The <code>ssh</code> command is an <a href="https://www.openssh.com/">OpenSSH</a> utility for using Secure Shell.
+  </li>
+  <li>
+    <a href="https://www.ssh.com/">SSH Communications Security</a> is a company founded by the <a href="https://ylonen.org/">author</a> of Secure Shell.
+  </li>
+</ul>
+<p>The Secure Shell protocol uses <a href="https://en.wikipedia.org/wiki/Public-key_cryptography">public-key encryption</a>. Keys are generated in pairs:</p>
+<ol start="0">
+  <li>A <dfn>public key</dfn> is a recipe for encrypting messages. Public keys can be published anywhere.</li>
+  <li>A <dfn>private key</dfn> is a hint for decrypting those messages. Private keys should never be shown to anyone.</li>
+</ol>
+<p>Public-key encryption is often used to send a temporary <a href="https://en.wikipedia.org/wiki/Shared_secret">shared secret</a> which can only be read by a specific person. A faster scheme like <a href="https://en.wikipedia.org/wiki/Advanced_Encryption_Standard">AES/Rijndael</a> can then be used to encrypt messages.</p>
+<blockquote>
+  Diane wants to send an important message to Dale. Bob, who is evil, wants to trick Dale.
+  <p>DIANE: Hello, Dale. It's me, Diane.</p>
+  <p>BOB: Hello, Dale. It's me, Diane.</p>
+  <p>Dale generates a random AES password. He uses Diane's public SSH key to encrypt it.</p>
+  <p>DALE: Hello, Dianes. Let's use AES. I will send you a password.</p>
+  <p>Dale sends the encrypted password to Bob and Diane. Diane uses her private SSH key to decrypt it. Bob cannot.</p>
+  <p>DIANE: (AES-encrypted) The owls are not what they seem.</p>
+  <p>DALE: *mistrusts owls*</p>
+  <p>BOB: Dammit.</p>
+</blockquote>
+<p>For mathematical details, here's an <a href="https://samkennerly.github.io/media/science/rsa_encryption.pdf">RSA tutorial</a> and a <a href="https://github.com/samkennerly/Fidelio">toy program</a>.</p>
+<h2 id="what_does_ssh_do">What does SSH do?</h2><!-- -->
+<p>Secure Shell is commonly used to control a computer from another computer's <a href="https://en.wikipedia.org/wiki/Command-line_interface">terminal</a>.</p>
+<figure>
+  <img alt="astral projection textbook" src="../media/random/ssh_astral.jpg">
+  <figcaption>
+    Daniel P. Dern. 1993. <cite>The Internet Guide for New Users.</cite> McGraw-Hill, Inc., New York, NY, USA.
+  </figcaption>
+</figure>
+<p>OpenSSH includes utilities for remote login and other SSH tasks:</p>
+<figure>
+  <img alt="hearts, stars, and stick figures" src="../media/random/ssh_b0rk.jpg">
+  <figcaption>
+    <cite>ssh tips</cite> from <a href="https://twitter.com/b0rk/status/1087936439470444544">Julia Evans</a>
+  </figcaption>
+</figure>
+<h2 id="how_do_i_use_openssh">How do I use OpenSSH?</h2><!-- -->
+<p>OpenSSH is freely available at <a href="https://www.openssh.com/">openssh.com</a>. See if it has already been installed:</p>
+<pre>
+which ssh
+</pre>
+<p>SSH keys and settings are (usually) stored in an <code>.ssh</code> <a href="https://en.wikipedia.org/wiki/Directory_(computing)">folder</a> in each user's home folder.</p>
+<div>
+  <table>
+    <tr>
+      <th>name</th>
+      <th>type</th>
+      <th>chmod</th>
+      <th>contents</th>
+    </tr>
+    <tr>
+      <td>.ssh</td>
+      <td>folder</td>
+      <td>700</td>
+      <td>OpenSSH keys and settings</td>
+    </tr>
+    <tr>
+      <td>.ssh/authorized_keys</td>
+      <td>text file</td>
+      <td>600</td>
+      <td>public keys allowed to login as this user</td>
+    </tr>
+    <tr>
+      <td>.ssh/config</td>
+      <td>text file</td>
+      <td>600</td>
+      <td>
+        settings for <a href="https://linux.die.net/man/1/ssh-agent">ssh-agent</a>
+      </td>
+    </tr>
+    <tr>
+      <td>.ssh/environment</td>
+      <td>text file</td>
+      <td>600</td>
+      <td>
+        extra <a href="https://en.wikipedia.org/wiki/Environment_variable">environment variables</a> for OpenSSH commands
+      </td>
+    </tr>
+    <tr>
+      <td>.ssh/id_rsa</td>
+      <td>text file</td>
+      <td>600</td>
+      <td>a private RSA key</td>
+    </tr>
+    <tr>
+      <td>.ssh/id_rsa.pub</td>
+      <td>text file</td>
+      <td>644</td>
+      <td>a public RSA key</td>
+    </tr>
+    <tr>
+      <td>.ssh/known_hosts</td>
+      <td>text file</td>
+      <td>644</td>
+      <td>IP addresses with known public keys</td>
+    </tr>
+    <tr>
+      <td>.ssh/rc</td>
+      <td>script</td>
+      <td>700</td>
+      <td>run these commands when user logs in</td>
+    </tr>
+  </table>
+</div>
+<p>Each <code>.ssh</code> folder can store multiple keys with different names like:</p>
+<pre>
+github_rsa
+github_rsa.pub
+kompromat_dsa
+kompromat_dsa.pub
+paintedeagle_ecdsa
+paintedeagle_ecdsa.pub
+</pre>
+<p>File naming conventions:</p>
+<ul>
+  <li>A public key has suffix <code>.pub</code></li>
+  <li>A private key has the same name, but with no suffix.</li>
+  <li>RSA key names end with <code>_rsa</code>, ECDSA keys end with <code>_ecdsa</code>, etc.</li>
+</ul>Run <code>ssh-keygen</code> to generate keys interactively. It will ask a few questions:
+<ul>
+  <li>Where to save the private key?</li>
+  <li>Require a password to use the private key?</li>
+</ul>
+<p>Generate a keypair and save to <code>testkey_rsa</code> and <code>testkey_rsa.pub</code> in the current folder:</p>
+<pre>
+ssh-keygen -f testkey_rsa
+</pre>
+<p>Change the password of an existing key:</p>
+<pre>
+ssh-keygen -p -f testkey_rsa
+</pre>
+<p>Generate a 521-bit <a href="https://en.wikipedia.org/wiki/Elliptic_Curve_Digital_Signature_Algorithm">ECDSA</a> keypair:</p>
+<pre>
+ssh-keygen -t ecdsa -b 521
+</pre>
+<p>Generate a 2048-bit RSA keypair for <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon EC2</a>:</p>
+<pre>
+ssh-keygen -t rsa -b 2048
+</pre>
+<p>Generate a 4096-bit RSA keypair (with a comment) for <a href="https://help.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent">GitHub</a>:</p>
+<pre>
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+</pre>
+<p>Show the instruction manual:</p>
+<pre>
+man ssh
+</pre>
+</main>
+<section id="icons">
+<a href="mailto:samkennerly@gmail.com"><img alt="Email" src="../media/icons/gmail.svg" height="32" title="Email"></a>
+<a href="https://github.com/samkennerly/"><img alt="GitHub" src="../media/icons/github.svg" height="32" title="GitHub"></a>
+<a href="https://www.linkedin.com/in/samkennerlyphd/"><img alt="LinkedIn" src="../media/icons/linkedin.svg" height="32" title="LinkedIn"></a>
+</section>
+<section id="jump">
+<a href="../quartos.html" rel="prev">--</a>
+<a href="#" id="updog">return</a>
+<a href="../science/research.html" rel="next">++</a>
+</section>
+<section id="klf">
+<span id="copyright">© Sam Kennerly 2020.</span>
+<a href="https://creativecommons.org/licenses/by/4.0" rel="license">Licensed under a CC BY 4.0 license.</a>
+<a href="https://quarto.neocities.org/"><br>Built by a Quarto</a>
+<span id="klftext">with icons by <a href="https://simpleicons.org/">Simple Icons</a>.<br></span>
+<address>samkennerly@gmail.com</address>
+</section>
+</body>
+</html>

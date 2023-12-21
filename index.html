@@ -36,7 +36,7 @@
 </details>
 </nav>
 <main>
-<p>Sam Kennerly is a data <select autofocus="" id="role">
+<p>Sam Kennerly is a professional data <select autofocus="" id="role">
   <option>
     analyst
   </option>
@@ -52,7 +52,7 @@
   <option>
     scientist
   </option>
-</select> and former scientist.</p>
+</select> and amateur musician.</p>
 <blockquote id="analyst">
   Far from being a lesser version of the other data science breeds, good analysts are a prerequisite for effectiveness in your data endeavors. <cite><a href="https://hbr.org/2018/12/what-great-data-analysts-do-and-why-every-organization-needs-them">Cassie Kozyrkov</a></cite>
 </blockquote>
@@ -69,34 +69,18 @@
   You hired a data scientist to work on machine learning. They've been warned about spending 80% of their time cleaning data. That sounds like a distant dream now. Instead, they spend 80% of their time begging for data to be created, accessed, moved, or explained. <cite><a href="https://hackernoon.com/how-not-to-hire-your-first-data-scientist-34f0f56f81ae">Monica Rogati</a></cite>
 </blockquote>
 <dl>
-  <dt>
-    <a href="projects.html">projects</a>
-  </dt>
-  <dd>Public GitHub repositories.</dd>
-  <dt>
-    <a href="quartos.html">quartos</a>
-  </dt>
-  <dd>
-    Websites built by a <a href="https://quarto.neocities.org/">quarto</a>.
-  </dd>
-  <dt><button onclick="openBox('random')">random</button></dt>
-  <dd>Editorial and/or tutorial articles.</dd>
-  <dt><button onclick="openBox('science')">science</button></dt>
-  <dd>Scientific research papers and talks.</dd>
-  <dt><button onclick="openBox('tldrs')">tldrs</button></dt>
-  <dd>
-    Quick-reference guides inspired by <a href="https://tldr.sh/">TLDR pages</a>.
-  </dd>
+  <dt>projects</dt>
+  <dd>some of my <a href="https://github.com/samkennerly/">public GitHub repositories</a></dd>
+  <dt>quartos</dt>
+  <dd>websites built by my <a href="https://quarto.neocities.org/">static website generator</a></dd>
+  <dt>random</dt>
+  <dd>short essays about programming and probability</dd>
+  <dt>science</dt>
+  <dd>slideshows, talks, and published research</dd>
+  <dt>tldrs</dt>
+  <dd>quick-reference guides inspired by <a href="https://tldr.sh/">TLDR pages</a></dd>
 </dl>
 <script>
-
-// Toggle details boxes open/shut
-var boxes = Array.from(document.querySelectorAll('nav details summary'))
-function openBox(label) {
-  box = boxes.find(x => x.innerText.toLowerCase() == label)
-  box.parentElement.open = !box.parentElement.open;
-}
-
 // Show one quote, hide the others
 var quotes = document.getElementsByTagName('blockquote');
 var role = document.getElementById('role');

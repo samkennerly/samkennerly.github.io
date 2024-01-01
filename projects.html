@@ -38,30 +38,7 @@
 <main>
 <h1>projects</h1><!-- -->
 Selected public repositories from <a href="https://github.com/samkennerly/">github.com/samkennerly</a>.
-<h2>aws</h2><!-- -->
-<dl>
-  <dt>
-    <a href="https://github.com/samkennerly/ec2box/">ec2box</a>
-  </dt>
-  <dd>
-    Example <a href="https://www.terraform.io/">Terraform</a> module for automated Amazon Web Services cloud provisioning. Each "box" is an <a href="https://aws.amazon.com/ec2/">EC2 instance</a> with its own <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">keypair</a>, <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-security-groups.html">security group</a>, <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatchLogsConcepts.html">CloudWatch log group</a>, <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM role</a>, and <a href="https://cloudinit.readthedocs.io/en/latest/">cloud-init</a> template.
-  </dd>
-</dl>
-<h2>docker</h2><!-- -->
-<dl>
-  <dt>
-    <a href="https://github.com/samkennerly/blackbox/">blackbox</a>
-  </dt>
-  <dd>
-    Self-contained <a href="https://en.wikipedia.org/wiki/Shell_script">shell script</a> that runs <a href="https://black.readthedocs.io/en/stable/">Black</a> (a Python code formatter) in a <a href="https://www.docker.com/resources/what-container">container</a>.
-  </dd>
-  <dt>
-    <a href="https://github.com/samkennerly/dockerbash/">dockerbash</a>
-  </dt>
-  <dd>
-    Short <a href="https://en.wikipedia.org/wiki/Shell_script">shell scripts</a> to avoid typing long Docker commands.
-  </dd>
-</dl>
+
 <h2>python</h2><!-- -->
 <dl>
   <dt>
@@ -74,13 +51,13 @@ Selected public repositories from <a href="https://github.com/samkennerly/">gith
     <a href="https://github.com/samkennerly/kingofsnake/">kingofsnake</a>
   </dt>
   <dd>
-    Data toolbox serving <a href="https://jupyter.org/">Jupyter</a> notebooks from <a href="https://www.docker.com/resources/what-container">containers</a>. Includes examples of <a href="https://en.wikipedia.org/wiki/Data_cleansing">cleaning</a>, <a href="https://en.wikipedia.org/wiki/Statistical_classification">classification</a>, <a href="https://en.wikipedia.org/wiki/Hierarchical_clustering">clustering</a>, <a href="https://en.wikipedia.org/wiki/Force-directed_graph_drawing">graph drawing</a>, and <a href="https://en.wikipedia.org/wiki/Principal_component_analysis">principal component analysis</a>.
+    Serve <a href="https://jupyter.org/">Jupyter</a> notebooks from a <a href="https://www.docker.com/resources/what-container">container</a>. Includes examples of <a href="https://en.wikipedia.org/wiki/Data_cleansing">cleaning</a>, <a href="https://en.wikipedia.org/wiki/Statistical_classification">classification</a>, <a href="https://en.wikipedia.org/wiki/Hierarchical_clustering">clustering</a>, <a href="https://en.wikipedia.org/wiki/Force-directed_graph_drawing">graph drawing</a>, and <a href="https://en.wikipedia.org/wiki/Principal_component_analysis">principal component analysis</a>.
   </dd>
   <dt>
     <a href="http://github.com/samkennerly/pydiner/">pydiner</a>
   </dt>
   <dd>
-    Template for a Python <a href="https://en.wikipedia.org/wiki/Sandbox_(software_development)">dev environment</a> which builds its own <a href="https://www.docker.com/resources/what-container">containers</a>. Includes examples of <a href="https://docs.pytest.org/">automated testing</a>, <a href="https://12factor.net/logs">log streaming</a>, and <a href="https://stackoverflow.com/questions/14132789/relative-imports-for-the-billionth-time">relative imports</a>.
+    Template for a generic Python project with developer <a href="https://en.wikipedia.org/wiki/Sandbox_(software_development)">sandboxes</a> in <a href="https://www.docker.com/resources/what-container">containers</a>. Includes examples of <a href="https://docs.pytest.org/">automated testing</a>, <a href="https://12factor.net/logs">log streaming</a>, and <a href="https://stackoverflow.com/questions/14132789/relative-imports-for-the-billionth-time">relative imports</a>.
   </dd>
 </dl>
 <h2>q</h2><!-- -->
@@ -89,7 +66,7 @@ Selected public repositories from <a href="https://github.com/samkennerly/">gith
     <a href="https://github.com/samkennerly/q_practice/">q_practice</a>
   </dt>
   <dd>
-    Introduction to <a href="https://kx.com/connect-with-us/download/">Q</a>, the scripting language for <a href="https://en.wikipedia.org/wiki/Kdb%2B">KDB+</a> databases. Includes examples of dicts, dots, iterators, lambdas, projections, and <code>flip enlist system "v"</code>.
+    Introduction to <a href="https://kx.com/connect-with-us/download/">Q</a>, the scripting language for <a href="https://en.wikipedia.org/wiki/Kdb%2B">KDB+</a> databases.
   </dd>
 </dl>
 <h2>ruby</h2><!-- -->
@@ -98,7 +75,38 @@ Selected public repositories from <a href="https://github.com/samkennerly/">gith
     <a href="https://github.com/samkennerly/assimilate/">assimilate</a>
   </dt>
   <dd>
-    Automated setup chores for a new Mac: install software tools, <a href="https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository">clone</a> repos, and create <a href="https://en.wikipedia.org/wiki/Symbolic_link">symlinks</a> to <a href="https://dotfiles.github.io/">dotfiles</a>.
+    Automate setup chores for a new Mac: install software, <a href="https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository">clone</a> repos, and create <a href="https://en.wikipedia.org/wiki/Symbolic_link">symlinks</a> to <a href="https://dotfiles.github.io/">dotfiles</a>.
+  </dd>
+</dl>
+
+<h2>shell</h2><!-- -->
+<dl>
+  <dt>
+    <a href="https://github.com/samkennerly/blackbox/">blackbox</a>
+  </dt>
+  <dd>
+    Build and run a
+    <a href="https://www.docker.com/resources/what-container">container</a>
+    to autoformat Python code with
+    <a href="https://black.readthedocs.io/en/stable/">Black</a>.
+  </dd>
+  <dt>
+    <a href="https://github.com/samkennerly/dockerbash/">dockerbash</a>
+  </dt>
+  <dd>
+    Short scripts that run long <a href="https://docs.docker.com/">Docker</a> commands.
+  </dd>
+</dl>
+
+<h2>terraform</h2><!-- -->
+<dl>
+  <dt>
+    <a href="https://github.com/samkennerly/ec2box/">ec2box</a>
+  </dt>
+  <dd>
+    Example
+    <a href="https://www.terraform.io/">Terraform</a>
+    module to simplify Amazon cloud computing. Each "box" is an <a href="https://aws.amazon.com/ec2/">EC2 instance</a> with its own <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">keypair</a>, <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-security-groups.html">security group</a>, <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatchLogsConcepts.html">CloudWatch log group</a>, <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM role</a>, and <a href="https://cloudinit.readthedocs.io/en/latest/">cloud-init</a> template.
   </dd>
 </dl>
 </main>
